@@ -363,14 +363,19 @@
     </style>
 </head>
 <body>
-<header style="position: relative; text-align: center; padding: 50px 15px; background-color: #1a1a1a; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1.png'); background-size: cover; background-position: center; border-radius: 0 0 20px 20px; overflow: hidden;">
+<header style="position: relative; text-align: center; padding: 40px 15px; background-color: #111827; overflow: hidden; border-radius: 0 0 20px 20px;">
     
-    <!-- العنوان والنصوص -->
-    <div style="position: relative; z-index: 2;">
-        <h1 style="margin: 0 0 8px 0; font-size: 26px; font-weight: bold; color: #ffffff; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">مِـدَادُ البَـنّ</h1>
-        <p style="margin: 0 0 25px 0; font-size: 14px; color: #e5e7eb; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">خريطة مزارع البن - رجال ألمع</p>
+    <!-- عرض الصورة كاملة خلف المحتوى -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+        <img src="1.png" alt="خلفية مداد البن" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35;" onerror="this.src='1.jpg'; this.onerror=function(){this.src='1.PNG';};">
+    </div>
 
-        <!-- الإحصائيات شاملة الارتفاع -->
+    <!-- المحتوى فوق الصورة (العنوان + الإحصائيات) -->
+    <div style="position: relative; z-index: 2;">
+        <h1 style="margin: 0 0 6px 0; font-size: 26px; font-weight: bold; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">مِـدَادُ البَـنّ</h1>
+        <p style="margin: 0 0 22px 0; font-size: 14px; color: #e5e7eb; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">خريطة مزارع البن - رجال ألمع</p>
+
+        <!-- الإحصائيات (شاملة الارتفاع) -->
         <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
             <div style="text-align: center; padding: 0 8px;">
                 <div id="total-farms" style="font-size: 19px; font-weight: bold; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">4</div>
