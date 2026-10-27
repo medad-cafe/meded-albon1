@@ -141,7 +141,7 @@
             margin: 1.5rem auto;
             padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 400px 1fr;
+            grid-template-columns: 420px 1fr;
             gap: 1.8rem;
         }
 
@@ -183,13 +183,35 @@
             background: var(--primary-dark);
             color: #FFF;
             text-decoration: none;
-            padding: 0.95rem;
+            padding: 0.85rem;
             border-radius: 12px;
             font-weight: 700;
+            font-size: 0.85rem;
             transition: background 0.2s;
+            margin-top: 0.5rem;
         }
 
         .btn-map-link:hover { background: var(--accent-red); }
+
+        .farms-list {
+            max-height: 520px;
+            overflow-y: auto;
+            padding-left: 5px;
+        }
+
+        .farm-item-card {
+            background: #F8FAF8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .farm-item-card:hover {
+            border-color: var(--accent-red);
+            background: #FFF;
+        }
 
         .map-section {
             background: var(--card-bg);
@@ -225,11 +247,10 @@
             border: 1px solid rgba(163, 74, 40, 0.2);
         }
 
-        /* حاوية الخريطة التوضيحية المطابقة للصورة */
         .map-wrapper {
             position: relative;
             width: 100%;
-            height: 560px;
+            height: 640px;
             background: #EEF3EE;
             border-radius: 14px;
             overflow: hidden;
@@ -267,14 +288,14 @@
         .pin-pill {
             background: #1C2826;
             color: #FFF;
-            padding: 8px 18px;
+            padding: 6px 14px;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             border: 2px solid var(--gold);
             white-space: nowrap;
         }
@@ -286,9 +307,9 @@
         .pin-arrow {
             width: 0;
             height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 9px solid #1C2826;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 8px solid #1C2826;
             margin: 0 auto;
         }
 
@@ -374,10 +395,11 @@
                 </div>
             </div>
 
+            <!-- إحصائيات شاملة -->
             <div class="header-stats">
-                <div class="stat-item"><div class="stat-val">4</div><div class="stat-lbl">المزارع الموثقة</div></div>
+                <div class="stat-item"><div class="stat-val">10</div><div class="stat-lbl">المزارع الموثقة</div></div>
                 <div class="stat-divider"></div>
-                <div class="stat-item"><div class="stat-val">2,900</div><div class="stat-lbl">إجمالي الأشجار</div></div>
+                <div class="stat-item"><div class="stat-val">4,750</div><div class="stat-lbl">إجمالي الأشجار</div></div>
                 <div class="stat-divider"></div>
                 <div class="stat-item"><div class="stat-val">1600م</div><div class="stat-lbl">أعلى ارتفاع</div></div>
             </div>
@@ -396,90 +418,122 @@
         </button>
     </div>
 
-<!-- قسم دليل المزارع الشامل -->
-<div class="info-card">
-    <div class="card-header-bg">
-        <h2 class="village-title"><i class="fa-solid fa-list-check"></i> دليل مزارع البن</h2>
-        <span style="font-size:0.85rem;"><i class="fa-solid fa-location-dot"></i> رجال ألمع وجبل قيس</span>
-    </div>
+    <!-- Section 1: الخريطة والدليل -->
+    <div id="tab-interactive" class="section-page active">
+        <div class="main-container">
+            <div>
+                <div class="info-card">
+                    <div class="card-header-bg">
+                        <h2 class="village-title"><i class="fa-solid fa-list-check"></i> دليل مزارع البن الشامل</h2>
+                        <span style="font-size:0.85rem;"><i class="fa-solid fa-location-dot"></i> رجال ألمع وجبل قيس</span>
+                    </div>
 
-    <!-- قائمة المزارع التفاعلية -->
-    <div class="farms-list" style="max-height: 520px; overflow-y: auto; padding-left: 5px;">
-        
-        <!-- 1. مزارع الياسر -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع الياسر</h4>
-            <p style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-mountain-city"></i> جبل قيس</p>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 750 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1550 متر</span></div>
-            </div>
-            <a href="https://maps.google.com/?q=18.155306,42.312222" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                    <!-- قائمة المزارع التفاعلية الشاملة -->
+                    <div class="farms-list">
+                        
+                        <!-- 1. مزارع الياسر -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع الياسر</h4>
+                            <p style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-mountain-city"></i> جبل قيس</p>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 750 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1550 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com/?q=18.155306,42.312222" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-        <!-- 2. مزرعة محمد أحمد القيسي -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد القيسي</h4>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 400 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1580 متر</span></div>
-            </div>
-            <a href="https://maps.google.com/?q=18.1566928,42.3117067" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                        <!-- 2. مزرعة الروابي -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة الروابي</h4>
+                            <p style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-mountain-city"></i> جبل صلب</p>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 600 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1600 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-        <!-- 3. مزرعة محمد أحمد مسفر -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد مسفر</h4>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 300 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1556 متر</span></div>
-            </div>
-            <a href="https://maps.google.com/?q=18.1575587,42.3104454" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                        <!-- 3. مزارع محمد أحمد القيسي -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد القيسي</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 400 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1580 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com/?q=18.1566928,42.3117067" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-        <!-- 4. مزرعة محمد عبدالله ناصر -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد عبدالله ناصر</h4>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 220 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1322 متر</span></div>
-            </div>
-            <a href="https://maps.google.com/?q=18.1508413,42.3247332" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                        <!-- 4. مزارع محمد أحمد مسفر -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد مسفر</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 300 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1556 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com/?q=18.1575587,42.3104454" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-        <!-- 5. مزرعة محمد يحيى الفاحمي -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد يحيى الفاحمي</h4>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 120 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1250 متر</span></div>
-            </div>
-            <a href="https://maps.google.com/?q=18.1464957,42.3217630" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                        <!-- 5. مزارع محمد عبدالله ناصر -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد عبدالله ناصر</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 220 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1322 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com/?q=18.1508413,42.3247332" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-        <!-- 6. مزرعة عايض أحمد آل حاصي -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع عايض أحمد آل حاصي</h4>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 60 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1512 متر</span></div>
-            </div>
-            <a href="https://maps.google.com/?q=18.1559594,42.3122586" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                        <!-- 6. مزارع محمد يحيى الفاحمي -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد يحيى الفاحمي</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 120 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1250 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com/?q=18.1464957,42.3217630" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-        <!-- 7. مزرعة الروابي -->
-        <div class="farm-item-card" style="background: #F8FAF8; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 1rem;">
-            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة الروابي</h4>
-            <p style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-mountain-city"></i> جبل صلب</p>
-            <div class="data-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0;">
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">🌳 600 شجرة</span></div>
-                <div class="data-box" style="background: #FFF; border: 1px solid var(--border); padding: 0.5rem; border-radius: 8px;"><span style="font-size:0.8rem;">⛰️ 1600 متر</span></div>
-            </div>
-            <a href="https://maps.google.com" target="_blank" class="btn-map-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary-dark); color: #FFF; text-decoration: none; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-        </div>
+                        <!-- 7. مزارع عايض أحمد آل حاصي -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع عايض أحمد آل حاصي</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 60 شجرة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1512 متر</span></div>
+                            </div>
+                            <a href="https://maps.google.com/?q=18.1559594,42.3122586" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
 
-    </div>
-</div>
+                        <!-- 8. مزرعة الوجيف -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة الوجيف</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 موثقة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ مرتفعة</span></div>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
+
+                        <!-- 9. مزرعة أبناء زاهر -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة أبناء زاهر</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 موثقة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ مرتفعة</span></div>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
+
+                        <!-- 10. مزرعة نخبة البن -->
+                        <div class="farm-item-card">
+                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة نخبة البن</h4>
+                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 موثقة</span></div>
+                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ مرتفعة</span></div>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="info-card">
                     <h3 style="font-family:'Amiri',serif; font-size:1.3rem; color:var(--primary-dark); margin-bottom:0.8rem;">
@@ -487,10 +541,9 @@
                     </h3>
                     <ul style="padding-right:1.2rem; font-size:0.9rem; color:var(--text-main);">
                         <li style="margin-bottom:0.4rem;">توثيق شامل لمزارع ومزارعي رجال ألمع.</li>
-                        <li style="margin-bottom:0.4rem;">أنواع البن وأماكن بيع الشتلات.</li>
+                        <li style="margin-bottom:0.4rem;">أنواع البن الخولاني الألمعي وأماكن بيع الشتلات.</li>
                     </ul>
 
-                    <!-- رابط النفاذ الوطني المباشر -->
                     <div class="nafath-box">
                         <h4 style="color:var(--primary-dark); font-size:1rem; margin-bottom:0.3rem;">التسجيل وشبكة المهتمين</h4>
                         <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">سجل دخولك المباشر لإضافة مزرعتك في الدليل</p>
@@ -501,7 +554,7 @@
                 </div>
             </div>
 
-            <!-- الخريطة الرسومية التوضيحية المطابقة لصورتك -->
+            <!-- الخريطة التوضيحية المحدثة بالدبابيس -->
             <div class="map-section">
                 <div class="map-header">
                     <h2 class="map-title">
@@ -517,26 +570,58 @@
                         <path d="M 320 280 Q 500 250 620 400" stroke="#E5A93C" stroke-width="2" stroke-dasharray="6,6" fill="none" />
                     </svg>
 
-                    <span class="map-label-location" style="top: 15%; left: 18%;">روام و وسانب</span>
-                    <span class="map-label-location" style="bottom: 22%; left: 22%;">وادي العوص</span>
-                    <span class="map-label-location" style="bottom: 12%; left: 35%;">العاينه </span>
+                    <span class="map-label-location" style="top: 12%; left: 16%;">روام ووسان</span>
+                    <span class="map-label-location" style="bottom: 22%; left: 18%;">وادي العوص</span>
+                    <span class="map-label-location" style="bottom: 28%; right: 28%;">وادي الظهرة</span>
+                    <span class="map-label-location" style="top: 15%; right: 25%;">جبل قيس</span>
 
-                    <div class="map-pin highlight" style="top: 32%; left: 52%;">
+                    <!-- دبابيس المزارع المتكاملة -->
+                    <div class="map-pin highlight" style="top: 22%; left: 45%;">
+                        <div class="pin-pill"><i class="fa-solid fa-mountain"></i> مزارع الياسر (جبل قيس)</div>
+                        <div class="pin-arrow"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 32%; left: 52%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الروابي</div>
                         <div class="pin-arrow"></div>
                     </div>
 
-                    <div class="map-pin" style="top: 48%; left: 58%;">
+                    <div class="map-pin" style="top: 38%; left: 62%;">
+                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي</div>
+                        <div class="pin-arrow"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 46%; left: 38%;">
+                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر</div>
+                        <div class="pin-arrow"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 54%; left: 66%;">
+                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر</div>
+                        <div class="pin-arrow"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 62%; left: 42%;">
+                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد يحيى الفاحمي</div>
+                        <div class="pin-arrow"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 70%; left: 58%;">
+                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي</div>
+                        <div class="pin-arrow"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 78%; left: 32%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الوجيف</div>
                         <div class="pin-arrow"></div>
                     </div>
 
-                    <div class="map-pin" style="top: 58%; left: 38%;">
+                    <div class="map-pin" style="top: 84%; left: 50%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة أبناء زاهر</div>
                         <div class="pin-arrow"></div>
                     </div>
 
-                    <div class="map-pin" style="top: 68%; left: 66%;">
+                    <div class="map-pin" style="top: 82%; left: 72%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة نخبة البن</div>
                         <div class="pin-arrow"></div>
                     </div>
@@ -556,12 +641,12 @@
                     "القهوة في رجال ألمع ليست مجرد مشروب، بل هي حكاية كرم وتاريخ يرويه الجبل والأرض المعطاءة، تتنفس بها جبال صلب وتفوح عبقاً في كل محفل."
                 </blockquote>
                 <blockquote style="border-right: 4px solid var(--gold); padding-right: 1rem; font-size: 1.05rem; font-style: italic; margin-bottom: 1.5rem; background: #F8FAF8; padding: 1rem; border-radius: 8px;">
-                    "وفي كفّ المصفّي صويحب البن .. تروي حباته السوداء قصة عرق الرجال وفخر المدرجات العمانية والألمعية."
+                    "وفي كفّ المصفّي صويحب البن الخولاني.. تروي حباته السوداء قصة عرق الرجال وفخر المدرجات العمانية والألمعية."
                 </blockquote>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
                     <div style="background: #F8FAF8; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
                         <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem; font-family: 'Amiri', serif; font-size: 1.2rem;">من تراث المكان</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">ارتبط البن في رجال ألمع بالمناسبات الوطنية والاجتماعية، وكان عنواناً للضيافة الفاخرة واستقبال الضيوف في الحصون التاريخية.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">ارتبط البن الخولاني في رجال ألمع بالمناسبات الوطنية والاجتماعية، وكان عنواناً للضيافة الفاخرة واستقبال الضيوف في الحصون التاريخية.</p>
                     </div>
                     <div style="background: #F8FAF8; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
                         <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem; font-family: 'Amiri', serif; font-size: 1.2rem;">رؤية الأدباء</h4>
@@ -582,19 +667,17 @@
                 <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">توثيق إحصائيات ومعارض مواسم مهرجان البن السنوي بالمنطقة:</p>
 
                 <div class="festivals-grid">
-                    <!-- الموسم الأول 2024 -->
                     <div class="festival-card">
                         <span class="badge-tag">موسم 2024</span>
                         <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الأول (2024)</h3>
                         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">الانطلاقة الكبرى والبداية الرسمية لتوثيق مزارع البن.</p>
                         <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
                             <li><strong>عدد الزوار:</strong> 12,000+ زائر.</li>
-                            <li><strong>عدد بيع الشتلات:</strong> 3,500.</li>
+                            <li><strong>عدد بيع الشتلات:</strong> 3,500 شتلة خولانية.</li>
                             <li><strong>حجم المبيعات:</strong> 2.5 طن من البن.</li>
                         </ul>
                     </div>
 
-                    <!-- الموسم الثاني 2025 -->
                     <div class="festival-card">
                         <span class="badge-tag">موسم 2025</span>
                         <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الثاني (2025)</h3>
@@ -606,7 +689,6 @@
                         </ul>
                     </div>
 
-                    <!-- الموسم الثالث -->
                     <div class="festival-card">
                         <span class="badge-tag badge-update">الموسم الحالي</span>
                         <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الثالث</h3>
