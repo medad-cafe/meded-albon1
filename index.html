@@ -550,12 +550,12 @@
 
             <div id="quotesAuthNotice" class="nafath-banner">
                 <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--nafath-green);"></i>
-                <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة الأبيات الشعرية تسجيل الدخول عبر نفاذ</h4>
-                <button class="nafath-btn" onclick="openNafathModal()"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
+                <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة الأبيات الشعرية إذن وتوثيق مسبق</h4>
+                <button class="nafath-btn" onclick="openNafathModal('quote')"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
             </div>
 
             <div id="quotesUserBadge" class="user-logged-badge">
-                <span><i class="fa-solid fa-circle-check"></i> تم التوثيق بنجاح عبر النفاذ الوطني الموحد</span>
+                <span><i class="fa-solid fa-circle-check"></i> تم التحقق من الإذن والتوثيق بنجاح</span>
                 <button onclick="logoutNafath()" style="background:none; border:none; color:#721c24; cursor:pointer; font-weight:700;">تسجيل الخروج</button>
             </div>
 
@@ -573,12 +573,12 @@
             
             <div id="farmAuthNotice" class="nafath-banner">
                 <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--nafath-green);"></i>
-                <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة وتسجيل المزارع التوثيق عبر النفاذ الوطني</h4>
-                <button class="nafath-btn" onclick="openNafathModal()"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
+                <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة المزارع الجديدة إذن مسبق</h4>
+                <button class="nafath-btn" onclick="openNafathModal('farm')"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
             </div>
 
             <div id="farmUserBadge" class="user-logged-badge">
-                <span><i class="fa-solid fa-circle-check"></i> تم التوثيق عبر النفاذ الوطني الموحد</span>
+                <span><i class="fa-solid fa-circle-check"></i> تم التحقق من الإذن والتوثيق بنجاح</span>
                 <button onclick="logoutNafath()" style="background:none; border:none; color:#721c24; cursor:pointer; font-weight:700;">تسجيل الخروج</button>
             </div>
 
@@ -606,21 +606,26 @@
                     <input type="text" id="farmFormMap" placeholder="https://maps.app.goo.gl/...">
                 </div>
 
-                <button type="button" class="submit-btn" onclick="addNewFarm()">توثيق وإضافة المزرعة للخريطة</button>
+                <button type="button" class="submit-btn" onclick="addNewFarm()">اعتماد وإضافة المزرعة للخريطة</button>
             </div>
         </div>
 
     </div>
 
-    <!-- نافذة نفاذ -->
+    <!-- نافذة نفاذ مع طلب إذن كلمة المرور الخاصة بكِ -->
     <div class="modal-overlay" id="nafathModal">
         <div class="modal-box">
             <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--nafath-green);"></i>
-            <h3>النفاذ الوطني الموحد</h3>
-            <p style="font-size: 0.85rem; color: #555;">يرجى تأكيد الطلب من خلال تطبيق نفاذ باختيار الرقم التالي:</p>
+            <h3>النفاذ الوطني الموحد وإذن الإدارة</h3>
+            <p style="font-size: 0.85rem; color: #555; margin-bottom: 0.5rem;">تأكيد رقم نفاذ وتاريخ الإذن:</p>
             <div class="random-code" id="nafathCode">42</div>
-            <p style="font-size: 0.8rem; color: #888; margin-bottom: 1rem;">جاري التوثيق وتأكيد الهوية...</p>
-            <button class="nafath-btn" style="width: 100%; justify-content: center;" onclick="confirmNafathLogin()">تأكيد التوثيق والدخول</button>
+            
+            <div style="margin-top: 1rem; text-align: right;">
+                <label style="font-size: 0.8rem; font-weight: 700; color: #333;">أدخلي رمز الإذن السري (خاص بأرجوان):</label>
+                <input type="password" id="adminSecretKey" placeholder="كلمة المرور الخاصة بكِ" style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; margin-top: 4px;">
+            </div>
+
+            <button class="nafath-btn" style="width: 100%; justify-content: center; margin-top: 1rem;" onclick="confirmNafathLogin()">تحقق وتأكيد الإذن</button>
         </div>
     </div>
 
@@ -768,7 +773,7 @@
 
         function addNewFarm() {
             if(!localStorage.getItem('nafath_auth')) {
-                alert('عذراً! يلزم تسجيل الدخول عبر النفاذ الوطني أولاً.');
+                alert('عذراً! يلزم أخذ الإذن وتجسيل الدخول أولاً.');
                 return;
             }
 
@@ -805,20 +810,29 @@
             document.getElementById('farmFormHeight').value = '';
             document.getElementById('farmFormMap').value = '';
 
-            alert('تمت إضافة المزرعة بنجاح وظهرت فوراً على الخريطة الجغرافية! ✨☕');
+            alert('تم اعتماد وإضافة المزرعة بنجاح بعد أخذ الإذن! ✨☕');
         }
 
         function openNafathModal() {
             const code = Math.floor(10 + Math.random() * 89);
             document.getElementById('nafathCode').innerText = code;
+            document.getElementById('adminSecretKey').value = '';
             document.getElementById('nafathModal').style.display = 'flex';
         }
 
         function confirmNafathLogin() {
+            const secret = document.getElementById('adminSecretKey').value.trim();
+            
+            // كلمة المرور السرية الخاصة بكِ (يمكنك تغييرها هنا متى شئتِ، حالياً جعلناها: 2026)
+            if (secret !== '2026') {
+                alert('عذراً! رمز الإذن السري غير صحيح. لا يمكن النشر إلا بإذنك الخاص.');
+                return;
+            }
+
             localStorage.setItem('nafath_auth', 'true');
             document.getElementById('nafathModal').style.display = 'none';
             applyNafathState();
-            alert('تم توثيق هويتك بنجاح عبر النفاذ الوطني الموحد!');
+            alert('تم التحقق من إذن أرجوان بنجاح! يمكنك الآن الإضافة والنشر. ✨');
         }
 
         function logoutNafath() {
@@ -858,7 +872,7 @@
                 card.innerHTML = `
                     <div class="quote-text">${q.text}</div>
                     <div class="quote-author">
-                        <span>— ${q.author || 'مشارك زائر (موثق)'}</span>
+                        <span>— ${q.author || 'مشارك معتمد'}</span>
                         <i class="fa-solid fa-trash" style="color: #c93b2b; cursor: pointer;" onclick="deleteQuote(${index})" title="حذف المشاركة"></i>
                     </div>
                 `;
@@ -875,7 +889,7 @@
 
         function addNewQuote() {
             if(!localStorage.getItem('nafath_auth')) {
-                alert('عذراً! يلزم تسجيل الدخول عبر النفاذ الوطني أولاً.');
+                alert('عذراً! يلزم أخذ الإذن مسبقاً.');
                 return;
             }
 
@@ -883,7 +897,7 @@
             const authorInput = document.getElementById('authorName');
 
             const text = textInput.value.trim();
-            const author = authorInput.value.trim() || 'مشارك زائر (موثق)';
+            const author = authorInput.value.trim() || 'مشارك معتمد';
 
             if (!text) {
                 alert('لطفاً اكتبي الأبيات قبل الإضافة!');
