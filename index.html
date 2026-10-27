@@ -225,22 +225,39 @@
             border: 1px solid rgba(163, 74, 40, 0.2);
         }
 
-        /* تصميم الخريطة بالدبابيس والأسهم الأصلية */
+        /* حاوية الخريطة الرسومية التفاعلية تماماً مثل تصميمك الأول */
         .map-wrapper {
             position: relative;
             width: 100%;
             height: 560px;
-            background: #EFF4EF;
+            background: #EAF0EA;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .map-bg-img {
+        /* خلفية تخطيطية رسومية تضفي طابع الخريطة التوضيحية */
+        .map-graphic-bg {
+            position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
+            background-image: 
+                radial-gradient(#D1DCD3 1.5px, transparent 1.5px),
+                linear-gradient(to right, rgba(209, 220, 211, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(209, 220, 211, 0.3) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.6;
+        }
+
+        /* خطوط وطرق توضيحية رسومية */
+        .map-path-line {
+            position: absolute;
+            stroke: var(--border);
+            stroke-dasharray: 6;
+            fill: none;
         }
 
         .map-pin {
@@ -259,14 +276,14 @@
         .pin-body {
             background: var(--primary-dark);
             color: #FFF;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
             font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 15px rgba(28, 40, 38, 0.2);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             border: 2px solid var(--gold);
             white-space: nowrap;
         }
@@ -278,9 +295,9 @@
         .pin-pointer {
             width: 0;
             height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 8px solid var(--primary-dark);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 10px solid var(--primary-dark);
             margin: 0 auto;
         }
 
@@ -325,7 +342,6 @@
             margin-top: 1.2rem;
         }
 
-        /* زر النفاذ المباشر */
         .nafath-btn {
             background: var(--nafath-green);
             color: #FFF;
@@ -432,29 +448,41 @@
                 </div>
             </div>
 
-            <!-- خريطة الأسهم والدبابيس التفاعلية الأصلية -->
+            <!-- الخريطة الرسومية التوضيحية مع الأسهم والدبابيس الخاصة بك -->
             <div class="map-section">
                 <div class="map-header">
                     <h2 class="map-title">
                         <i class="fa-solid fa-map-marked-alt"></i> الخريطة الجغرافية التفاعلية
                     </h2>
-                    <span class="map-hint"><i class="fa-solid fa-hand-pointer"></i> اضغط على أي مزرعة بالخريطة</span>
+                    <span class="map-hint"><i class="fa-solid fa-hand-pointer"></i> اضغط على دبابيس المزارع للتفاصيل</span>
                 </div>
                 <div class="map-wrapper">
-                    <!-- خلفية خريطة جمالية -->
-                    <img src="1.PNG" alt="خريطة رجال ألمع" class="map-bg-img">
+                    <div class="map-graphic-bg"></div>
                     
-                    <!-- دبابيس مزارع البن (بنفس نظام الأسهم والأيقونات الخاص بك) -->
-                    <div class="map-pin active" style="top: 35%; left: 45%;">
+                    <!-- خطوط توصيل توضيحية رسومية -->
+                    <svg style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                        <path d="M 150 180 Q 250 280 400 220 T 650 350" stroke="#D1DCD3" stroke-width="3" stroke-dasharray="8,8" fill="none" />
+                        <path d="M 300 400 Q 450 150 550 250" stroke="#D1DCD3" stroke-width="3" stroke-dasharray="8,8" fill="none" />
+                    </svg>
+
+                    <!-- دبابيس المزارع بالتصميم التوضيحي الأصلي -->
+                    <div class="map-pin active" style="top: 35%; left: 38%;">
                         <div class="pin-body">
                             <i class="fa-solid fa-seedling"></i> مزرعة الروابي (1600م)
                         </div>
                         <div class="pin-pointer"></div>
                     </div>
 
-                    <div class="map-pin" style="top: 55%; left: 65%;">
+                    <div class="map-pin" style="top: 60%; left: 68%;">
                         <div class="pin-body">
-                            <i class="fa-solid fa-seedling"></i> جبل صلب
+                            <i class="fa-solid fa-mountain"></i> جبل صلب
+                        </div>
+                        <div class="pin-pointer"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 25%; left: 72%;">
+                        <div class="pin-body">
+                            <i class="fa-solid fa-tree"></i> مزارع العوص
                         </div>
                         <div class="pin-pointer"></div>
                     </div>
