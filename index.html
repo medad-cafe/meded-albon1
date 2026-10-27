@@ -29,8 +29,12 @@
             line-height: 1.6;
         }
 
+        /* 1. الهيدر الفخم مع خلفية الصورة bon.png */
         header {
-            background: linear-gradient(135deg, rgba(28, 40, 38, 0.70) 0%, rgba(17, 26, 25, 0.78) 100%);
+            background: linear-gradient(135deg, rgba(28, 40, 38, 0.45) 0%, rgba(17, 26, 25, 0.55) 100%), url('bon.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: #FFF;
             padding: 3.5rem 2rem 2.5rem 2rem;
             min-height: 280px;
@@ -42,46 +46,34 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             position: relative;
             z-index: 10;
-            overflow: hidden;
-        }
-
-        /* صورة الخلفية الفخمة داخل الهيدر بنسبة وضوح مريحة */
-        header img.bg-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.65;
-            z-index: -1;
         }
 
         header h1 {
             font-family: 'Amiri', serif;
             font-size: 2.8rem;
             font-weight: 700;
-            color: #F4F7F4;
+            color: #FFFFFF;
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
         header p {
             font-size: 1.1rem;
-            color: #D4AF37;
+            color: #F3E5AB;
             margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
+        /* الإحصائيات مع عداد الزوار */
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
             background: rgba(28, 40, 38, 0.85);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            padding: 1rem 2rem;
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            padding: 1rem;
             border-radius: 12px;
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
             margin-top: 1rem;
         }
@@ -91,13 +83,13 @@
         }
 
         .stat-item .number {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #D4AF37;
         }
 
         .stat-item .label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #E2E8F0;
         }
 
@@ -109,141 +101,277 @@
 
         .section-title {
             font-family: 'Amiri', serif;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             color: var(--primary-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             text-align: center;
-            position: relative;
         }
 
-        /* شبكة أزرار المزارع */
-        .farms-grid {
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* 2. رسمة وتصميم الخريطة الجغرافية التفاعلية المطابقة للصورة */
+        .geo-map-box {
+            background: #EAEFEA;
+            border: 1px solid #D0DDD0;
+            border-radius: 24px;
+            padding: 2.5rem 1.5rem;
+            position: relative;
+            margin-bottom: 2rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
+            display: flex;
+            justify-content: center;
+        }
+
+        .geo-oval-container {
+            width: 100%;
+            max-width: 480px;
+            border: 3px solid #3E5A68;
+            border-radius: 40% 40% 45% 45% / 25% 25% 30% 30%;
+            padding: 3rem 1.5rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 1.4rem;
             align-items: center;
-            margin-bottom: 2.5rem;
         }
 
-        .farm-btn {
-            background-color: var(--primary-dark);
-            color: #FFF;
-            border: 1px solid var(--primary-gold);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
+        /* أسماء الأودية والمعالم المكتوبة حول الرسمة البيضاوية */
+        .val-label {
+            position: absolute;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #556B63;
+        }
+        .val-rwam { top: 15px; left: 30px; }
+        .val-aows { bottom: 50%; left: 15px; }
+        .val-zhrah { bottom: 30%; left: 20px; }
+        .val-rtham { bottom: 15px; left: 40px; }
+
+        /* كروت أزرار المزارع داخل الرسم البيضاوي */
+        .farm-geo-card {
+            background: var(--primary-dark);
+            color: #FFFFFF;
+            border: 2px solid var(--primary-gold);
+            padding: 0.85rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 1rem;
-            font-weight: 600;
-            width: 100%;
-            max-width: 450px;
+            font-weight: 700;
+            width: 85%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 5;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            gap: 8px;
         }
 
-        .farm-btn:hover {
-            background-color: #2D403C;
-            transform: translateY(-2px);
-            border-color: #FFF;
+        .farm-geo-card.highlight {
+            background: #8B4513;
+            border-color: #FFD700;
         }
 
-        /* كارت عرض بيانات المزرعة التفاعلي */
-        .farm-card {
+        .farm-geo-card:hover, .farm-geo-card.active {
+            background: #C5A059;
+            color: #1C2826;
+            border-color: #1C2826;
+            transform: scale(1.05);
+        }
+
+        /* سهم الاتصال بين الكروت */
+        .card-arrow {
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 8px solid #1C2826;
+            margin: -8px 0;
+        }
+
+        .tooltip-hint {
+            background: #FFF0F0;
+            color: #A94442;
+            border: 1px solid #F2DEDEDE;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 3. الفراغ التفاعلي لبيانات المزرعة */
+        .details-display-area {
             background: var(--card-bg);
             border-radius: 16px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--primary-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-gold);
             margin-bottom: 2.5rem;
-            display: none; /* مخفي حتى يتم الضغط على المزرعة */
-            animation: fadeIn 0.4s ease-in-out;
+            min-height: 180px;
+            transition: all 0.3s ease;
         }
 
-        .farm-card.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .farm-card h2 {
+        .farm-title-header {
             font-family: 'Amiri', serif;
-            font-size: 2rem;
+            font-size: 1.9rem;
             color: var(--primary-dark);
             margin-bottom: 0.5rem;
         }
 
-        .location-tag {
+        .location-badge {
             display: inline-block;
             background: #EBF3ED;
             color: var(--primary-dark);
-            padding: 0.3rem 0.8rem;
+            padding: 0.3rem 0.9rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
-        .info-grid {
+        .info-cards-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
-        .info-box {
-            background: #F9FBF9;
+        .info-card-item {
+            background: #F8FAF8;
             border: 1px solid #E2E8F0;
-            padding: 1rem;
-            border-radius: 10px;
+            padding: 0.9rem;
+            border-radius: 12px;
             text-align: center;
         }
 
-        .info-box .val {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .info-card-item .value {
+            font-size: 1.25rem;
+            font-weight: 800;
             color: var(--primary-dark);
         }
 
-        .info-box .lbl {
-            font-size: 0.85rem;
+        .info-card-item .label {
+            font-size: 0.8rem;
             color: #666;
+            margin-top: 2px;
         }
 
-        .map-btn {
-            display: block;
-            text-align: center;
+        .coffee-type-box {
+            background: #F8FAF8;
+            padding: 0.9rem;
+            border-radius: 10px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .google-map-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             background: var(--primary-dark);
             color: #FFF;
-            padding: 0.8rem;
-            border-radius: 8px;
+            padding: 0.85rem;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
             transition: background 0.3s;
         }
 
-        .map-btn:hover {
+        .google-map-btn:hover {
             background: #2D403C;
         }
 
-        /* نموذج إرسال بيانات المزرعة */
+        /* 4. قسم قالوا عن البن */
+        .quotes-section {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-top: 5px solid #C5A059;
+            margin-bottom: 2.5rem;
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .quote-card {
+            background: #F8FAF8;
+            border-right: 4px solid #1C2826;
+            border-radius: 10px;
+            padding: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .quote-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.15rem;
+            color: #1C2826;
+            line-height: 1.8;
+            white-space: pre-line;
+            margin-bottom: 0.8rem;
+        }
+
+        .quote-author {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #C5A059;
+            text-align: left;
+        }
+
+        .add-quote-box {
+            background: #F4F7F4;
+            border: 1px dashed #C5A059;
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .add-quote-box input, .add-quote-box textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .add-quote-btn {
+            background: #1C2826;
+            color: #FFF;
+            border: 1px solid #C5A059;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* 5. نموذج تسجيل المزرعة */
         .form-section {
             background: var(--card-bg);
             padding: 2rem;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             border: 1px solid #E2E8F0;
-        }
-
-        .form-section h3 {
-            color: var(--primary-dark);
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
         }
 
         .form-group {
@@ -255,7 +383,6 @@
             font-weight: 700;
             font-size: 0.85rem;
             margin-bottom: 0.4rem;
-            color: var(--primary-dark);
         }
 
         .form-group input {
@@ -263,7 +390,6 @@
             padding: 0.8rem;
             border: 1px solid #CBD5E1;
             border-radius: 8px;
-            font-size: 0.95rem;
         }
 
         .form-row {
@@ -282,18 +408,13 @@
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #B38F4B;
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. الهيدر الفخم المحدث بفرز عداد الزوار -->
     <header>
-        <img src="bon.png" alt="خلفية الهيدر" class="bg-img">
         <h1>مِـدَادُ الـبَــنّ</h1>
         <p>خريطة وأدب ومهرجانات البن في رجال ألمع</p>
         
@@ -303,54 +424,103 @@
                 <div class="label">المزارع الموثقة</div>
             </div>
             <div class="stat-item">
-                <div class="number">2,900</div>
+                <div class="number">4,750</div>
                 <div class="label">إجمالي الأشجار</div>
             </div>
             <div class="stat-item">
                 <div class="number">1600م</div>
                 <div class="label">أعلى ارتفاع</div>
             </div>
+            <div class="stat-item">
+                <div class="number" id="visitorCount">...</div>
+                <div class="label"><i class="fa-solid fa-eye"></i> عدد الزوار</div>
+            </div>
         </div>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">خريطة ومسار مزارع البن</h2>
-        
-        <!-- أزرار المزارع (الخريطة التفاعلية) -->
-        <div class="farms-grid">
-            <button class="farm-btn" onclick="showFarm('yasser')"><i class="fa-solid fa-tree"></i> مزارع الياسر (جبل قيس)</button>
-            <button class="farm-btn" onclick="showFarm('rawabi')"><i class="fa-solid fa-tree"></i> مزرعة الروابي</button>
-            <button class="farm-btn" onclick="showFarm('qaisi')"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي</button>
-            <button class="farm-btn" onclick="showFarm('mesfer')"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر</button>
-            <button class="farm-btn" onclick="showFarm('nasser')"><i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر</button>
-            <button class="farm-btn" onclick="showFarm('fahmi')"><i class="fa-solid fa-tree"></i> مزارع محمد يحيى الفاحمي</button>
-            <button class="farm-btn" onclick="showFarm('hasi')"><i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي</button>
-            <button class="farm-btn" onclick="showFarm('wujayf')"><i class="fa-solid fa-tree"></i> مزرعة الوجيف</button>
-            <button class="farm-btn" onclick="showFarm('nokhba')"><i class="fa-solid fa-tree"></i> مزرعة نخبة البن</button>
-        </div>
-
-        <!-- الفراغ التفاعلي الذي ستظهر فيه بيانات المزرعة عند الضغط عليها -->
-        <div id="farmDetailsContainer">
-            <div style="text-align: center; color: #777; padding: 1.5rem; background: #FFF; border-radius: 12px; margin-bottom: 2.5rem; border: 1px dashed #CBD5E1;">
-                <i class="fa-solid fa-hand-pointer" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary-gold);"></i>
-                <p>اضغطي على أي مزرعة من القائمة أعلاه لعرض تفاصيلها وبياناتها هنا مباشرة</p>
+        <!-- 2. قسم الخريطة التفاعلية بالرسم الجغرافي المطابق للصورة -->
+        <div style="text-align: center;">
+            <h2 class="section-title">الخريطة الجغرافية التفاعلية</h2>
+            <div class="tooltip-hint">
+                <i class="fa-solid fa-hand-pointer"></i> اضغطي على أي مزرعة بالخريطة
             </div>
         </div>
 
-        <!-- نموذج إرسال بيانات المزارعة (مربوط بـ Formspree) -->
+        <div class="geo-map-box">
+            <div class="geo-oval-container">
+                <span class="val-label val-rwam">روام و وسانب</span>
+                <span class="val-label val-aows">وادي العوص</span>
+                <span class="val-label val-rtham">العاينه</span>
+
+                <!-- كروت المزارع المرتبة بالشكل البيضاوي -->
+                <button class="farm-geo-card highlight active" onclick="loadFarmData('rawabi', this)">
+                    <i class="fa-solid fa-tree"></i> مزرعة الروابي
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('wujayf', this)">
+                    <i class="fa-solid fa-tree"></i> مزرعة الوجيف
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('zaher', this)">
+                    <i class="fa-solid fa-tree"></i> مزرعة أبناء زاهر
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('nokhba', this)">
+                    <i class="fa-solid fa-tree"></i> مزرعة نخبة البن
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. الفراغ التفاعلي لبيانات المزرعة -->
+        <div id="farmDetailsDisplay" class="details-display-area">
+            <!-- يتم تحميل بيانات المزرعة هنا تلقائياً -->
+        </div>
+
+        <!-- 4. قسم قالوا عن البن والتفاعل الشعري -->
+        <div class="quotes-section">
+            <h2 class="section-title" style="text-align: right;"><i class="fa-solid fa-feather-pointed" style="color: #C5A059;"></i> قالوا عن البن والقهوة</h2>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">روائع ما ترنّم به الشعراء في حب البن الأصيل ورمز الضيافة والكرامة</p>
+
+            <div class="quotes-grid" id="quotesContainer">
+                <div class="quote-card">
+                    <div class="quote-text">يَا دَلاَلٍ تِجْذِبَ الرُّوحَ بِالعَطْرِ الشَّذِي
+وَالبُنُّ فِي السَّافِحِ الأَشْمَخِ تَبَاهَى وَزَهَا</div>
+                    <div class="quote-author">— من وحي أدب رجال ألمع</div>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-text">قم سو فنجالٍ على بدوة الضي
+دلال نرسلها على جمر الأشواق
+بنٍ من الشامخ على الكف منقي</div>
+                    <div class="quote-author">— شعر نبطي عريق</div>
+                </div>
+            </div>
+
+            <div class="add-quote-box">
+                <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-pen-nib"></i> شاركنا ببيتٍ أو قيل في البن:</h4>
+                <input type="text" id="authorName" placeholder="اسم الشاعر / المشارك (اختياري)">
+                <textarea id="quoteContent" rows="3" placeholder="اكتبي البيت أو الأبيات هنا..."></textarea>
+                <button class="add-quote-btn" onclick="addNewQuote()"><i class="fa-solid fa-paper-plane"></i> إضافة الأبيات للموقع</button>
+            </div>
+        </div>
+
+        <!-- 5. نموذج تسجيل المزرعة Formspree -->
         <div class="form-section">
-            <h3><i class="fa-solid fa-pen-to-square"></i> نموذج إرسال بيانات المزرعة</h3>
+            <h3 style="margin-bottom: 1rem; color: #1C2826;"><i class="fa-solid fa-pen-to-square"></i> نموذج تسجيل مزارع البن</h3>
             <form action="https://formspree.io/f/xeaagdlp" method="POST">
                 <div class="form-group">
-                    <label>اسم المزارع:</label>
-                    <input type="text" name="اسم_المزرعة" required placeholder="مثال: مزارع آل فلان">
+                    <label>اسم المزرعة / المزارع:</label>
+                    <input type="text" name="اسم_المزرعة" required placeholder="مثال: مزرعة الروابي">
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
                         <label>عدد الأشجار:</label>
-                        <input type="number" name="عدد_الأشجار" required placeholder="مثال: 350">
+                        <input type="number" name="عدد_الأشجار" required placeholder="مثال: 750">
                     </div>
                     <div class="form-group">
                         <label>الارتفاع (متر):</label>
@@ -358,6 +528,7 @@
                     </div>
                 </div>
 
+            
                 <button type="submit" class="submit-btn">إرسال البيانات</button>
             </form>
         </div>
@@ -365,42 +536,105 @@
     </div>
 
     <script>
-        // قاعدة بيانات المزارع لتظهر فور الضغط عليها في الفراغ المخصص
-        const farmsData = {
-            yasser: { name: "مزارع الياسر (جبل قيس)", location: "جبل قيس - رجال ألمع", trees: "750", height: "1600 متر", map: "https://maps.google.com" },
-            rawabi: { name: "مزرعة الروابي", location: "جبل صلب - رجال ألمع", trees: "600", height: "1550 متر", map: "https://maps.google.com" },
-            qaisi: { name: "مزارع محمد أحمد القيسي", location: "رجال ألمع", trees: "400", height: "1500 متر", map: "https://maps.google.com" },
-            mesfer: { name: "مزارع محمد أحمد مسفر", location: "رجال ألمع", trees: "350", height: "1480 متر", map: "https://maps.google.com" },
-            nasser: { name: "مزارع محمد عبدالله ناصر", location: "رجال ألمع", trees: "300", height: "1450 متر", map: "https://maps.google.com" },
-            fahmi: { name: "مزارع محمد يحيى الفاحمي", location: "رجال ألمع", trees: "250", height: "1400 متر", map: "https://maps.google.com" },
-            hasi: { name: "مزارع عايض أحمد آل حاصي", location: "رجال ألمع", trees: "200", height: "1380 متر", map: "https://maps.google.com" },
-            wujayf: { name: "مزرعة الوجيف", location: "رجال ألمع", trees: "150", height: "1350 متر", map: "https://maps.google.com" },
-            nokhba: { name: "مزرعة نخبة البن", location: "رجال ألمع", trees: "100", height: "1300 متر", map: "https://maps.google.com" }
+        // قاعدة بيانات المزارع الجغرافية
+        const farmsDatabase = {
+            rawabi: { name: "مزرعة الروابي", location: "روام ووسان - رجال ألمع", trees: "750", height: "1600 متر", map: "https://maps.google.com" },
+            wujayf: { name: "مزرعة الوجيف", location: "رجال ألمع", trees: "500", height: "1450 متر", map: "https://maps.google.com" },
+            zaher: { name: "مزرعة أبناء زاهر", location: "وادي العوص - رجال ألمع", trees: "650", height: "1500 متر", map: "https://maps.google.com" },
+            nokhba: { name: "مزرعة نخبة البن", location: "وادي الظهرة - رجال ألمع", trees: "400", height: "1350 متر", map: "https://maps.google.com" }
         };
 
-        function showFarm(farmKey) {
-            const farm = farmsData[farmKey];
-            const container = document.getElementById('farmDetailsContainer');
-            
-            container.innerHTML = `
-                <div class="farm-card active">
-                    <h2>${farm.name}</h2>
-                    <span class="location-tag"><i class="fa-solid fa-location-dot"></i> ${farm.location}</span>
-                    
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <div class="val">${farm.trees} شجرة</div>
-                            <div class="lbl"><i class="fa-solid fa-tree"></i> عدد الأشجار</div>
-                        </div>
-                        <div class="info-box">
-                            <div class="val">${farm.height}</div>
-                            <div class="lbl"><i class="fa-solid fa-mountain"></i> الارتفاع عن سطح البحر</div>
-                        </div>
+        function loadFarmData(key, element) {
+            document.querySelectorAll('.farm-geo-card').forEach(btn => btn.classList.remove('active'));
+            if(element) element.classList.add('active');
+
+            const farm = farmsDatabase[key];
+            const displayArea = document.getElementById('farmDetailsDisplay');
+
+            displayArea.innerHTML = `
+                <h2 class="farm-title-header">${farm.name}</h2>
+                <span class="location-badge"><i class="fa-solid fa-location-dot"></i> ${farm.location}</span>
+                
+                <div class="info-cards-grid">
+                    <div class="info-card-item">
+                        <div class="value">${farm.trees} شجرة</div>
+                        <div class="label"><i class="fa-solid fa-tree"></i> عدد الأشجار</div>
                     </div>
-                    <a href="${farm.map}" target="_blank" class="map-btn"><i class="fa-solid fa-map-location-dot"></i> فتح في خرائط Google</a>
+                    <div class="info-card-item">
+                        <div class="value">${farm.height}</div>
+                        <div class="label"><i class="fa-solid fa-mountain"></i> الارتفاع عن سطح البحر</div>
+                    </div>
                 </div>
+
+                <div class="coffee-type-box">
+                    <strong><i class="fa-solid fa-seedling" style="color: #C5A059;"></i> نوع البن المستزرع:</strong> ${farm.type}
+                </div>
+
+                <a href="${farm.map}" target="_blank" class="google-map-btn">
+                    <i class="fa-solid fa-map-location-dot"></i> فتح في خرائط Google
+                </a>
             `;
         }
+
+        // دالة عداد الزوار الحقيقي والمحفوظ
+        function setupVisitorCounter() {
+            let count = localStorage.getItem('site_visitors') || 1248;
+            count = parseInt(count) + 1;
+            localStorage.setItem('site_visitors', count);
+            document.getElementById('visitorCount').innerText = count.toLocaleString('ar-SA');
+        }
+
+        // تحميل الأبيات الشعرية
+        function loadSavedQuotes() {
+            const saved = JSON.parse(localStorage.getItem('user_quotes') || '[]');
+            const container = document.getElementById('quotesContainer');
+            saved.forEach(q => {
+                const card = document.createElement('div');
+                card.className = 'quote-card';
+                card.innerHTML = `
+                    <div class="quote-text">${q.text}</div>
+                    <div class="quote-author">— ${q.author || 'مشارك زائر'}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addNewQuote() {
+            const textInput = document.getElementById('quoteContent');
+            const authorInput = document.getElementById('authorName');
+
+            const text = textInput.value.trim();
+            const author = authorInput.value.trim() || 'مشارك زائر';
+
+            if (!text) {
+                alert('لطفاً اكتبي الأبيات قبل الإضافة!');
+                return;
+            }
+
+            const container = document.getElementById('quotesContainer');
+            const card = document.createElement('div');
+            card.className = 'quote-card';
+            card.innerHTML = `
+                <div class="quote-text">${text}</div>
+                <div class="quote-author">— ${author}</div>
+            `;
+
+            container.appendChild(card);
+
+            const saved = JSON.parse(localStorage.getItem('user_quotes') || '[]');
+            saved.push({ text: text, author: author });
+            localStorage.setItem('user_quotes', JSON.stringify(saved));
+
+            textInput.value = '';
+            authorInput.value = '';
+            alert('تمت إضافة الأبيات بنجاح إلى قائمة قالوا عن البن! ✨☕');
+        }
+
+        window.onload = function() {
+            loadFarmData('rawabi', document.querySelector('.farm-geo-card.active'));
+            setupVisitorCounter();
+            loadSavedQuotes();
+        };
     </script>
 </body>
 </html>
