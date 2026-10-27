@@ -41,12 +41,17 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #111A19 100%);
-            color: #FFF;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
-
+          header {
+    /* إضافة صورة الخلفية مع تدرج لوني داكن وشفاف فوقها لتوضيح النصوص */
+    background: linear-gradient(135deg, rgba(28, 40, 38, 0.90) 0%, rgba(17, 26, 25, 0.92) 100%), url(1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFF;
+    padding: 2rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+}
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
