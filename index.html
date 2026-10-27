@@ -517,11 +517,10 @@
 
         <div class="geo-map-box">
             <div class="geo-oval-container" id="ovalMapContainer">
-                <span class="val-label val-rwam">روام و وسانب</span>
+                <span class="val-label val-rwam"> روام و وسانب</span>
                 <span class="val-label val-aows">وادي العوص</span>
                 <span class="val-label val-zhrah"> جبل قيس </span>
-                <span class="val-label val-rtham"> حسوة  </span>
-                <!-- تحميل المزارع ديناميكياً -->
+                <span class="val-label val-rtham"> حسوة </span>
             </div>
         </div>
 
@@ -552,7 +551,7 @@
             <div id="quotesAuthNotice" class="nafath-banner">
                 <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--nafath-green);"></i>
                 <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة الأبيات الشعرية تسجيل الدخول عبر نفاذ</h4>
-                <button class="nafath-btn" onclick="openNafathModal('quote')"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
+                <button class="nafath-btn" onclick="openNafathModal()"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
             </div>
 
             <div id="quotesUserBadge" class="user-logged-badge">
@@ -575,7 +574,7 @@
             <div id="farmAuthNotice" class="nafath-banner">
                 <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--nafath-green);"></i>
                 <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة وتسجيل المزارع التوثيق عبر النفاذ الوطني</h4>
-                <button class="nafath-btn" onclick="openNafathModal('farm')"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
+                <button class="nafath-btn" onclick="openNafathModal()"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
             </div>
 
             <div id="farmUserBadge" class="user-logged-badge">
@@ -626,7 +625,6 @@
     </div>
 
     <script>
-        /* قاعدة البيانات للمزارع العشر بكافة إحداثياتها ومواقعها الدقيقة */
         const defaultFarms = {
             yasser: { 
                 name: "مزارع الياسر", 
@@ -810,7 +808,7 @@
             alert('تمت إضافة المزرعة بنجاح وظهرت فوراً على الخريطة الجغرافية! ✨☕');
         }
 
-        function openNafathModal(type) {
+        function openNafathModal() {
             const code = Math.floor(10 + Math.random() * 89);
             document.getElementById('nafathCode').innerText = code;
             document.getElementById('nafathModal').style.display = 'flex';
@@ -830,28 +828,18 @@
 
         function applyNafathState() {
             const auth = localStorage.getItem('nafath_auth') === 'true';
+            const banners = document.querySelectorAll('.nafath-banner');
+            const badges = document.querySelectorAll('.user-logged-badge');
+            const protectedForms = document.querySelectorAll('#addQuoteForm, #farmRegisterForm');
 
-            if(auth) {
-                document.getElementById('quotesAuthNotice').style.display = 'none';
-                document.getElementById('quotesUserBadge').style.display = 'flex';
-                document.getElementById('addQuoteForm').style.opacity = '1';
-                document.getElementById('addQuoteForm').style.pointerEvents = 'auto';
-
-                document.getElementById('farmAuthNotice').style.display = 'none';
-                document.getElementById('farmUserBadge').style.display = 'flex';
-                document.getElementById('farmRegisterForm').style.opacity = '1';
-                document.getElementById('farmRegisterForm').style.pointerEvents = 'auto';
-            } else {
-                document.getElementById('quotesAuthNotice').style.display = 'block';
-                document.getElementById('quotesUserBadge').style.display = 'none';
-                document.getElementById('addQuoteForm').style.opacity = '0.5';
-                document.getElementById('addQuoteForm').style.pointerEvents = 'none';
-
-                document.getElementById('farmAuthNotice').style.display = 'block';
-                document.getElementById('farmUserBadge').style.display = 'none';
-                document.getElementById('farmRegisterForm').style.opacity = '0.5';
-                document.getElementById('farmRegisterForm').style.pointerEvents = 'none';
-            }
+            banners.forEach(b => b.style.display = auth ? 'none' : 'block');
+            badges.forEach(bg => bg.style.display = auth ? 'flex' : 'none');
+            protectedForms.forEach(f => {
+                if(f) {
+                    f.style.opacity = auth ? '1' : '0.5';
+                    f.style.pointerEvents = auth ? 'auto' : 'none';
+                }
+            });
         }
 
         function setupVisitorCounter() {
