@@ -39,28 +39,32 @@
             line-height: 1.6;
             min-height: 100vh;
         }
+header {
+    background: linear-gradient(135deg, rgba(15, 23, 21, 0.82) 0%, rgba(10, 16, 15, 0.88) 100%), url('1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    padding: 3.5rem 2rem 2.5rem 2rem; /* زيادة الارتفاع من الأعلى والأسفل ليظهر جمال الصورة */
+    min-height: 280px; /* ضمان ارتفاع كافي وواضح للهيدر */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 10;
+}
 
-        header {
-            background: linear-gradient(135deg, rgba(28, 40, 38, 0.88) 0%, rgba(17, 26, 25, 0.92) 100%), url('1');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #FFF;
-            padding: 2rem 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            position: relative;
-            z-index: 10;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}   }
 
         .logo-area {
             display: flex;
