@@ -225,7 +225,7 @@
             border: 1px solid rgba(163, 74, 40, 0.2);
         }
 
-        /* حاوية الخريطة التوضيحية تماماً كالصورة */
+        /* حاوية الخريطة التوضيحية المطابقة للصورة */
         .map-wrapper {
             position: relative;
             width: 100%;
@@ -236,7 +236,6 @@
             border: 1px solid var(--border);
         }
 
-        /* الحدود الجغرافية المنحنية */
         .geo-border-svg {
             position: absolute;
             top: 0; left: 0;
@@ -244,7 +243,6 @@
             pointer-events: none;
         }
 
-        /* أسماء المواقع والأودية المحيطة كما في صورتك */
         .map-label-location {
             position: absolute;
             font-size: 0.8rem;
@@ -252,7 +250,6 @@
             font-weight: 600;
         }
 
-        /* تصميم الدبابيس والأسهم المطابقة للصورة */
         .map-pin {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -283,7 +280,7 @@
         }
 
         .map-pin.highlight .pin-pill {
-            background: #A34A28; /* لون بني مميز لمزرعة الروابي */
+            background: #A34A28;
         }
 
         .pin-arrow {
@@ -301,7 +298,7 @@
 
         .festivals-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.2rem;
             margin-top: 1rem;
         }
@@ -323,6 +320,7 @@
             font-size: 0.75rem;
             padding: 2px 10px;
             border-radius: 12px;
+            z-index: 2;
         }
 
         .badge-update { background: #D97706; }
@@ -442,7 +440,7 @@
                 </div>
             </div>
 
-            <!-- الخريطة التوضيحية المطابقة تماماً لصورتك -->
+            <!-- الخريطة الرسومية التوضيحية المطابقة لصورتك -->
             <div class="map-section">
                 <div class="map-header">
                     <h2 class="map-title">
@@ -451,7 +449,6 @@
                     <span class="map-hint"><i class="fa-solid fa-hand-pointer"></i> اضغط على أي مزرعة بالخريطة</span>
                 </div>
                 <div class="map-wrapper">
-                    <!-- الحدود المنحنية والخطوط المنقطة تماماً مثل التصميم الأصلي -->
                     <svg class="geo-border-svg">
                         <path d="M 120 100 C 350 40, 700 80, 750 250 C 800 420, 600 520, 350 500 C 100 480, 50 250, 120 100 Z" stroke="#3A5046" stroke-width="2.5" fill="none" />
                         <path d="M 450 180 Q 550 320 620 400" stroke="#E5A93C" stroke-width="2" stroke-dasharray="6,6" fill="none" />
@@ -459,13 +456,11 @@
                         <path d="M 320 280 Q 500 250 620 400" stroke="#E5A93C" stroke-width="2" stroke-dasharray="6,6" fill="none" />
                     </svg>
 
-                    <!-- أسماء المواقع والأودية -->
                     <span class="map-label-location" style="top: 15%; left: 18%;">روام ووسان</span>
                     <span class="map-label-location" style="bottom: 22%; left: 22%;">وادي العوص</span>
                     <span class="map-label-location" style="bottom: 28%; right: 32%;">وادي الظهرة</span>
                     <span class="map-label-location" style="bottom: 12%; left: 35%;">المعاينة ورثام</span>
 
-                    <!-- دبابيس المزارع بالتصميم والأسهم المطابقة للصورة -->
                     <div class="map-pin highlight" style="top: 32%; left: 52%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الروابي</div>
                         <div class="pin-arrow"></div>
@@ -495,12 +490,24 @@
         <div class="main-container" style="grid-template-columns: 1fr;">
             <div class="info-card">
                 <h2 style="font-family:'Amiri',serif; font-size:1.8rem; color:var(--primary-dark); margin-bottom:1rem;">
-                    <i class="fa-solid fa-book-open"></i> قالوا عن البن
+                    <i class="fa-solid fa-book-open"></i> قالوا عن البن والقهوة في رجال ألمع
                 </h2>
-                <blockquote style="border-right: 4px solid var(--accent-red); padding-right: 1rem; font-size: 1.1rem; font-style: italic; margin-bottom: 1rem;">
-                    "القهوة في رجال ألمع ليست مجرد مشروب، بل هي حكاية كرم وتاريخ يرويه الجبل والأرض المعطاءة."
+                <blockquote style="border-right: 4px solid var(--accent-red); padding-right: 1rem; font-size: 1.1rem; font-style: italic; margin-bottom: 1.2rem;">
+                    "القهوة في رجال ألمع ليست مجرد مشروب، بل هي حكاية كرم وتاريخ يرويه الجبل والأرض المعطاءة، تتنفس بها جبال صلب وتفوح عبقاً في كل محفل."
                 </blockquote>
-                <p style="font-size:0.9rem; color:var(--text-muted);">مجموعة مختارة من المقالات، الشعر، العبارات، والكتب حول البن عالمياً ومحلياً.</p>
+                <blockquote style="border-right: 4px solid var(--gold); padding-right: 1rem; font-size: 1.05rem; font-style: italic; margin-bottom: 1.5rem; background: #F8FAF8; padding: 1rem; border-radius: 8px;">
+                    "وفي كفّ المصفّي صويحب البن الخولاني.. تروي حباته السوداء قصة عرق الرجال وفخر المدرجات العمانية والألمعية."
+                </blockquote>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div style="background: #F8FAF8; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem; font-family: 'Amiri', serif; font-size: 1.2rem;">من تراث المكان</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">ارتبط البن الخولاني في رجال ألمع بالمناسبات الوطنية والاجتماعية، وكان عنواناً للضيافة الفاخرة واستقبال الضيوف في الحصون التاريخية.</p>
+                    </div>
+                    <div style="background: #F8FAF8; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem; font-family: 'Amiri', serif; font-size: 1.2rem;">رؤية الأدباء</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">وثّق شعراء وأدباء جمعية الأدب المهنية برجال ألمع مسيرة شجرة البن في قصائد نبطية وفصيحة خالدة تخلد تراب هذه الأرض.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -510,23 +517,42 @@
         <div class="main-container" style="grid-template-columns: 1fr;">
             <div class="info-card">
                 <h2 style="font-family:'Amiri',serif; font-size:1.8rem; color:var(--primary-dark); margin-bottom:1rem;">
-                    <i class="fa-solid fa-champagne-glasses"></i> مهرجانات البن في رجال ألمع
+                    <i class="fa-solid fa-champagne-glasses"></i> مهرجانات البن في رجال ألمع (الشواهد والنجاحات)
                 </h2>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">محطات مضيئة ومهرجانات سنوية وثقت مسيرة النجاح ودعمت مزارعي البن بالمنطقة:</p>
+
                 <div class="festivals-grid">
                     <div class="festival-card">
-                        <span class="badge-tag">مكتمل</span>
-                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem;">المهرجان الأول</h3>
-                        <p style="font-size:0.85rem; color:var(--text-muted);">عدد الزوار: 12,000+ | المبيعات: 2.5 طن</p>
+                        <span class="badge-tag">شاهد نجاح</span>
+                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الأول</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">الانطلاقة الكبرى لتوثيق ودعم مزارع البن.</p>
+                        <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
+                            <li>عدد الزوار: 12,000+ زائر.</li>
+                            <li>حجم المبيعات: 2.5 طن من البن الخولاني.</li>
+                            <li>مشاركة أكثر من 30 مزارعاً أساسياً.</li>
+                        </ul>
                     </div>
+
                     <div class="festival-card">
-                        <span class="badge-tag">مكتمل</span>
-                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem;">المهرجان الثاني</h3>
-                        <p style="font-size:0.85rem; color:var(--text-muted);">عدد الزوار: 25,000+ | المبيعات: 5 أطنان</p>
+                        <span class="badge-tag">شاهد توسع</span>
+                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الثاني</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">توسع في الحضور والفعاليات المصاحبة.</p>
+                        <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
+                            <li>عدد الزوار: 25,000+ زائر.</li>
+                            <li>حجم المبيعات: تجاوزت 5 أطنان.</li>
+                            <li>إطلاق ورش العمل التدريبية للمزارعين.</li>
+                        </ul>
                     </div>
+
                     <div class="festival-card">
                         <span class="badge-tag badge-update">تحت التحديث</span>
-                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem;">المهرجان الثالث</h3>
-                        <p style="font-size:0.85rem; color:var(--text-muted);">البيانات والتغطيات والفعاليات جاري تحديثها..</p>
+                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الثالث</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">آفاق جديدة وشراكات استراتيجية..</p>
+                        <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
+                            <li>جاري حصر بيانات المزارعين الجدد.</li>
+                            <li>تحديث الإحصائيات والأجنحة التفاعلية.</li>
+                            <li>إضافات نوعية في الدليل التفاعلي للبن.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
