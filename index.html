@@ -4,26 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مِـدَادُ الـبَــنّ - رجال ألمع</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --primary-dark: #1C2826;
+            --primary-gold: #C5A059;
             --canvas-bg: #F4F7F4;
-            --accent-red: #A34A28;
-            --gold: #E5A93C;
             --card-bg: #FFFFFF;
-            --text-main: #2C221E;
-            --text-muted: #6B5E57;
-            --border: #D1DCD3;
-            --shadow: 0 10px 30px rgba(28, 40, 38, 0.12);
-            --radius: 18px;
-            --nafath-green: #006837;
+            --text-main: #2C3E35;
         }
 
         * {
@@ -37,726 +27,389 @@
             background-color: var(--canvas-bg);
             color: var(--text-main);
             line-height: 1.6;
-            min-height: 100vh;
-        }
-<header>
-    <!-- حطي سطر الصورة هنا مباشرة -->
-    <img src="bon.png" alt="خلفية الهيدر" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.60; z-index: -1;">
-
-    <!-- باقي محتوى الهيدر حقك (العنوان والإحصائيات) يكون بعدها هنا -->
-    <h1>مِـدَادُ الـبَــنّ</h1>
-    ...
-</header>
-}
-.header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}   }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            background: rgba(255,255,255,0.08);
-            width: 52px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid rgba(229, 169, 60, 0.4);
-        }
-
-        .logo-text h1 {
-            font-family: 'Amiri', serif;
-            font-size: 2.2rem;
+        header {
+            background: linear-gradient(135deg, rgba(28, 40, 38, 0.70) 0%, rgba(17, 26, 25, 0.78) 100%);
             color: #FFF;
-            line-height: 1.1;
-        }
-
-        .logo-text p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.75);
-        }
-
-        .header-stats {
-            display: flex;
-            gap: 1.5rem;
-            background: rgba(255,255,255,0.07);
-            padding: 0.5rem 1.4rem;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .stat-item { text-align: center; }
-        .stat-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); }
-        .stat-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.85); }
-        .stat-divider { width: 1px; background: rgba(255,255,255,0.2); }
-
-        .nav-tabs {
-            max-width: 1400px;
-            margin: 1.5rem auto 0;
-            padding: 0 1.5rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--primary-dark);
-            padding: 0.8rem 1.6rem;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--primary-dark);
-            color: #FFF;
-            border-color: var(--primary-dark);
-        }
-
-        .section-page { display: none; }
-        .section-page.active { display: block; }
-
-        .main-container {
-            max-width: 1400px;
-            margin: 1.5rem auto;
-            padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: 420px 1fr;
-            gap: 1.8rem;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .card-header-bg {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #2D3E3A 100%);
-            color: #FFF;
-            padding: 1.4rem;
-            margin: -1.5rem -1.5rem 1.2rem -1.5rem;
-            border-radius: var(--radius) var(--radius) 0 0;
-        }
-
-        .village-title { font-family: 'Amiri', serif; font-size: 1.8rem; color: #FFF; margin-bottom: 0.3rem; }
-
-        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1rem; }
-        .data-box {
-            background: #F8FAF8;
-            border: 1px solid var(--border);
-            padding: 0.85rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .btn-map-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--primary-dark);
-            color: #FFF;
-            text-decoration: none;
-            padding: 0.85rem;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: background 0.2s;
-            margin-top: 0.5rem;
-        }
-
-        .btn-map-link:hover { background: var(--accent-red); }
-
-        .farms-list {
-            max-height: 520px;
-            overflow-y: auto;
-            padding-left: 5px;
-        }
-
-        .farm-item-card {
-            background: #F8FAF8;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: all 0.2s ease;
-        }
-
-        .farm-item-card:hover {
-            border-color: var(--accent-red);
-            background: #FFF;
-        }
-
-        .map-section {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            padding: 1.3rem;
+            padding: 3.5rem 2rem 2.5rem 2rem;
+            min-height: 280px;
             display: flex;
             flex-direction: column;
-        }
-
-        .map-header {
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .map-title {
-            font-family: 'Amiri', serif;
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-        }
-
-        .map-hint {
-            font-size: 0.85rem;
-            color: var(--accent-red);
-            background: #FDF3F0;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            border: 1px solid rgba(163, 74, 40, 0.2);
-        }
-
-        .map-wrapper {
-            position: relative;
-            width: 100%;
-            height: 640px;
-            background: #EEF3EE;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-
-        .geo-border-svg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-        }
-
-        .map-label-location {
-            position: absolute;
-            font-size: 0.8rem;
-            color: #4A5D54;
-            font-weight: 600;
-        }
-
-        .map-pin {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            z-index: 5;
-            transition: transform 0.25s ease;
             text-align: center;
-            text-decoration: none;
-        }
-
-        .map-pin:hover {
-            transform: translate(-50%, -55%) scale(1.12);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
             z-index: 10;
+            overflow: hidden;
         }
 
-        .pin-pill {
-            background: #1C2826;
-            color: #FFF;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.8rem;
+        /* صورة الخلفية الفخمة داخل الهيدر بنسبة وضوح مريحة */
+        header img.bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.65;
+            z-index: -1;
+        }
+
+        header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
             font-weight: 700;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            border: 2px solid var(--gold);
-            white-space: nowrap;
+            color: #F4F7F4;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
-        .map-pin.highlight .pin-pill {
-            background: #A34A28;
+        header p {
+            font-size: 1.1rem;
+            color: #D4AF37;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
-        .pin-arrow {
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 8px solid #1C2826;
-            margin: 0 auto;
-        }
-
-        .map-pin.highlight .pin-arrow {
-            border-top-color: #A34A28;
-        }
-
-        .festivals-grid {
+        .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            background: rgba(28, 40, 38, 0.85);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
             margin-top: 1rem;
         }
 
-        .festival-card {
-            background: #F8FAF8;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 1.4rem;
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #D4AF37;
+        }
+
+        .stat-item .label {
+            font-size: 0.85rem;
+            color: #E2E8F0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            text-align: center;
             position: relative;
         }
 
-        .badge-tag {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            background: var(--accent-red);
+        /* شبكة أزرار المزارع */
+        .farms-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .farm-btn {
+            background-color: var(--primary-dark);
             color: #FFF;
-            font-size: 0.75rem;
-            padding: 2px 10px;
-            border-radius: 12px;
-            z-index: 2;
+            border: 1px solid var(--primary-gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .badge-update { background: #D97706; }
+        .farm-btn:hover {
+            background-color: #2D403C;
+            transform: translateY(-2px);
+            border-color: #FFF;
+        }
 
-        .nafath-box {
-            background: #F0F7F3;
-            border: 1px solid #BCE3CB;
-            border-radius: 14px;
-            padding: 1.5rem;
+        /* كارت عرض بيانات المزرعة التفاعلي */
+        .farm-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-gold);
+            margin-bottom: 2.5rem;
+            display: none; /* مخفي حتى يتم الضغط على المزرعة */
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .farm-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .farm-card h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .location-tag {
+            display: inline-block;
+            background: #EBF3ED;
+            color: var(--primary-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box {
+            background: #F9FBF9;
+            border: 1px solid #E2E8F0;
+            padding: 1rem;
+            border-radius: 10px;
             text-align: center;
-            margin-top: 1.2rem;
         }
 
-        .nafath-btn {
-            background: var(--nafath-green);
+        .info-box .val {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .info-box .lbl {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .map-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary-dark);
+            color: #FFF;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .map-btn:hover {
+            background: #2D403C;
+        }
+
+        /* نموذج إرسال بيانات المزرعة */
+        .form-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .form-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            color: var(--primary-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--primary-gold);
             color: #FFF;
             border: none;
-            padding: 0.85rem 1.8rem;
-            font-weight: bold;
-            font-size: 0.95rem;
-            border-radius: 10px;
+            padding: 0.9rem;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
             cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
-            text-decoration: none;
-            font-family: 'Tajawal', sans-serif;
-            transition: opacity 0.2s;
+            transition: background 0.3s;
         }
 
-        .nafath-btn:hover {
-            opacity: 0.9;
-            color: #FFF;
-        }
-
-        @media (max-width: 992px) {
-            .main-container { grid-template-columns: 1fr; }
+        .submit-btn:hover {
+            background: #B38F4B;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <div class="logo-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                <div class="logo-text">
-                    <h1>مِـدَادُ الـبَــنّ</h1>
-                    <p>خريطة وأدب ومهرجانات البن في رجال ألمع</p>
-                </div>
+        <img src="bon.png" alt="خلفية الهيدر" class="bg-img">
+        <h1>مِـدَادُ الـبَــنّ</h1>
+        <p>خريطة وأدب ومهرجانات البن في رجال ألمع</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="number">9</div>
+                <div class="label">المزارع الموثقة</div>
             </div>
-
-            <!-- إحصائيات شاملة -->
-            <div class="header-stats">
-                <div class="stat-item"><div class="stat-val">10</div><div class="stat-lbl">المزارع الموثقة</div></div>
-                <div class="stat-divider"></div>
-                <div class="stat-item"><div class="stat-val">4,750</div><div class="stat-lbl">إجمالي الأشجار</div></div>
-                <div class="stat-divider"></div>
-                <div class="stat-item"><div class="stat-val">1600م</div><div class="stat-lbl">أعلى ارتفاع</div></div>
+            <div class="stat-item">
+                <div class="number">2,900</div>
+                <div class="label">إجمالي الأشجار</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">1600م</div>
+                <div class="label">أعلى ارتفاع</div>
             </div>
         </div>
     </header>
 
-    <div class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('interactive')">
-            <i class="fa-solid fa-map-location-dot"></i> الخريطة والدليل التفاعلي
-        </button>
-        <button class="tab-btn" onclick="switchTab('quotes')">
-            <i class="fa-solid fa-quote-right"></i> قالوا عن البن
-        </button>
-        <button class="tab-btn" onclick="switchTab('festivals')">
-            <i class="fa-solid fa-champagne-glasses"></i> مهرجانات البن
-        </button>
-    </div>
-
-    <!-- Section 1: الخريطة والدليل -->
-    <div id="tab-interactive" class="section-page active">
-        <div class="main-container">
-            <div>
-                <div class="info-card">
-                    <div class="card-header-bg">
-                        <h2 class="village-title"><i class="fa-solid fa-list-check"></i> دليل مزارع البن الشامل</h2>
-                        <span style="font-size:0.85rem;"><i class="fa-solid fa-location-dot"></i> رجال ألمع</span>
-                    </div>
-
-                    <!-- قائمة المزارع التفاعلية -->
-                    <div class="farms-list">
-                        
-                        <!-- 1. مزارع الياسر -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع الياسر</h4>
-                            <p style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-mountain-city"></i> جبل قيس</p>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 750 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1550 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com/?q=18.155306,42.312222" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 2. مزرعة الروابي -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة الروابي</h4>
-                            <p style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-mountain-city"></i> جبل صلب</p>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 600 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1600 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 3. مزارع محمد أحمد القيسي -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد القيسي</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 400 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1580 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com/?q=18.1566928,42.3117067" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 4. مزارع محمد أحمد مسفر -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد مسفر</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 300 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1556 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com/?q=18.1575587,42.3104454" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 5. مزارع محمد عبدالله ناصر -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد عبدالله ناصر</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 220 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1322 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com/?q=18.1508413,42.3247332" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 6. مزارع محمد يحيى الفاحمي -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد يحيى الفاحمي</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 120 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1250 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com/?q=18.1464957,42.3217630" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 7. مزارع عايض أحمد آل حاصي -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع عايض أحمد آل حاصي</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 60 شجرة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ 1512 متر</span></div>
-                            </div>
-                            <a href="https://maps.google.com/?q=18.1559594,42.3122586" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 8. مزرعة الوجيف -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة الوجيف</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 موثقة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ مرتفعة</span></div>
-                            </div>
-                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 9. مزرعة أبناء زاهر -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة أبناء زاهر</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 موثقة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ مرتفعة</span></div>
-                            </div>
-                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-
-                        <!-- 10. مزرعة نخبة البن -->
-                        <div class="farm-item-card">
-                            <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزرعة نخبة البن</h4>
-                            <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">🌳 موثقة</span></div>
-                                <div class="data-box" style="padding:0.5rem;"><span style="font-size:0.8rem;">⛰️ مرتفعة</span></div>
-                            </div>
-                            <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-family:'Amiri',serif; font-size:1.3rem; color:var(--primary-dark); margin-bottom:0.8rem;">
-                        <i class="fa-solid fa-seedling"></i> دليل البن والجمعية
-                    </h3>
-                    <ul style="padding-right:1.2rem; font-size:0.9rem; color:var(--text-main);">
-                        <li style="margin-bottom:0.4rem;">توثيق شامل لمزارع ومزارعي رجال ألمع.</li>
-                        <li style="margin-bottom:0.4rem;">أنواع البن وأماكن بيع الشتلات.</li>
-                    </ul>
-
-                   <!-- قسم توثيق النفاذ الوطني وإضافة المزارع -->
-<div class="info-card" style="margin-top: 1.5rem;">
-    <div class="card-header-bg">
-        <h2 class="village-title"><i class="fa-solid fa-id-card-clip"></i> إضافة مزرعة جديدة (نفاذ)</h2>
-        <span style="font-size:0.85rem;"><i class="fa-solid fa-shield-halved"></i> موثق عبر النفاذ الوطني الموحد</span>
-    </div>
-
-    <div style="padding: 0.5rem 0;">
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-            عزيزي المزارع، يمكنك تسجيل دخولك عبر النفاذ الوطني وتعبئة بيانات مزرعتك لتظهر رسمياً في خريطة "مداد البن".
-        </p>
-
-        <!-- خطوة النفاذ الوطني -->
-        <div class="nafath-box" style="margin-bottom: 1.5rem; background: #F0F7F3; border: 1px solid #BCE3CB; border-radius: 14px; padding: 1.2rem; text-align: center;">
-            <h4 style="color:var(--primary-dark); font-size:1rem; margin-bottom:0.3rem;">الخطوة الأولى: التوثيق الرقمي</h4>
-            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.6rem;">تسجيل الدخول الآمن عبر المنصة الوطنية</p>
-            <a href="https://www.iam.gov.sa" target="_blank" class="nafath-btn" style="background: #006837; color: #FFF; padding: 0.8rem 1.6rem; font-weight: bold; font-size: 0.9rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                <i class="fa-solid fa-key"></i> الدخول عبر النفاذ الوطني الموحد
-            </a>
+    <div class="container">
+        
+        <h2 class="section-title">خريطة ومسار مزارع البن</h2>
+        
+        <!-- أزرار المزارع (الخريطة التفاعلية) -->
+        <div class="farms-grid">
+            <button class="farm-btn" onclick="showFarm('yasser')"><i class="fa-solid fa-tree"></i> مزارع الياسر (جبل قيس)</button>
+            <button class="farm-btn" onclick="showFarm('rawabi')"><i class="fa-solid fa-tree"></i> مزرعة الروابي</button>
+            <button class="farm-btn" onclick="showFarm('qaisi')"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي</button>
+            <button class="farm-btn" onclick="showFarm('mesfer')"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر</button>
+            <button class="farm-btn" onclick="showFarm('nasser')"><i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر</button>
+            <button class="farm-btn" onclick="showFarm('fahmi')"><i class="fa-solid fa-tree"></i> مزارع محمد يحيى الفاحمي</button>
+            <button class="farm-btn" onclick="showFarm('hasi')"><i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي</button>
+            <button class="farm-btn" onclick="showFarm('wujayf')"><i class="fa-solid fa-tree"></i> مزرعة الوجيف</button>
+            <button class="farm-btn" onclick="showFarm('nokhba')"><i class="fa-solid fa-tree"></i> مزرعة نخبة البن</button>
         </div>
 
-        <!-- نموذج إرسال بيانات المزرعة -->
-  <form action="https://formspree.io/f/xeaagdlp" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
-            <h4 style="color: var(--primary-dark); font-size: 1.05rem; font-family: 'Amiri', serif; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem;">
-                الخطوة الثانية: بيانات المزرعة
-            </h4>
-
-            <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">اسم المالك أو المزرعة:</label>
-                <input type="text" name="اسم_المزرعة" required placeholder="مثال: مزارع آل فلان" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
-                <div>
-                    <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">عدد الأشجار:</label>
-                    <input type="number" name="عدد_الأشجار" required placeholder="مثال: 350" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
-                </div>
-                <div>
-                    <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">الارتفاع (متر):</label>
-                    <input type="text" name="الارتفاع" required placeholder="مثال: 1550 متر" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
-                </div>
-            </div>
-
-            <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">رابط إحداثيات خرائط Google:</label>
-                <input type="text" name="رابط_الموقع" required placeholder="ألصق رابط موقع المزرعة هنا" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
-            </div>
-
-            <button type="submit" style="background: var(--primary-dark); color: #FFF; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; font-family: 'Tajawal', sans-serif; transition: background 0.2s; margin-top: 0.5rem;">
-                <i class="fa-solid fa-paper-plane"></i> إرسال طلب إضافة المزرعة
-            </button>
-        </form>
-    </div>
-</div>
-            <!-- الخريطة التوضيحية التفاعلية مع دبابيس المزارع وروابط الإحداثيات المباشرة -->
-            <div class="map-section">
-                <div class="map-header">
-                    <h2 class="map-title">
-                        <i class="fa-solid fa-map-marked-alt"></i> الخريطة الجغرافية التفاعلية
-                    </h2>
-                    <span class="map-hint"><i class="fa-solid fa-hand-pointer"></i> اضغط على أي دبوس مزرعة بالخريطة لفتح موقعها</span>
-                </div>
-                <div class="map-wrapper">
-                    <svg class="geo-border-svg">
-                        <path d="M 120 100 C 350 40, 700 80, 750 250 C 800 420, 600 520, 350 500 C 100 480, 50 250, 120 100 Z" stroke="#3A5046" stroke-width="2.5" fill="none" />
-                        <path d="M 450 180 Q 550 320 620 400" stroke="#E5A93C" stroke-width="2" stroke-dasharray="6,6" fill="none" />
-                        <path d="M 450 180 Q 320 280 280 400" stroke="#E5A93C" stroke-width="2" stroke-dasharray="6,6" fill="none" />
-                        <path d="M 320 280 Q 500 250 620 400" stroke="#E5A93C" stroke-width="2" stroke-dasharray="6,6" fill="none" />
-                    </svg>
-
-                    <span class="map-label-location" style="top: 12%; left: 16%;">روام و وسانب</span>
-                    <span class="map-label-location" style="bottom: 22%; left: 18%;">وادي العوص</span>
-                    <span class="map-label-location" style="top: 15%; right: 25%;">جبل قيس</span>
-
-                    <!-- دبابيس المزارع التفاعلية -->
-                    <a href="https://maps.google.com/?q=18.155306,42.312222" target="_blank" class="map-pin highlight" style="top: 22%; left: 45%;">
-                        <div class="pin-pill"><i class="fa-solid fa-mountain"></i> مزارع الياسر (جبل قيس)</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 32%; left: 52%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الروابي</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com/?q=18.1566928,42.3117067" target="_blank" class="map-pin" style="top: 38%; left: 62%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com/?q=18.1575587,42.3104454" target="_blank" class="map-pin" style="top: 46%; left: 38%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com/?q=18.1508413,42.3247332" target="_blank" class="map-pin" style="top: 54%; left: 66%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com/?q=18.1464957,42.3217630" target="_blank" class="map-pin" style="top: 62%; left: 42%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد يحيى الفاحمي</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com/?q=18.1559594,42.3122586" target="_blank" class="map-pin" style="top: 70%; left: 58%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 78%; left: 32%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الوجيف</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 84%; left: 50%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة أبناء زاهر</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                    <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 82%; left: 72%;">
-                        <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة نخبة البن</div>
-                        <div class="pin-arrow"></div>
-                    </a>
-
-                </div>
+        <!-- الفراغ التفاعلي الذي ستظهر فيه بيانات المزرعة عند الضغط عليها -->
+        <div id="farmDetailsContainer">
+            <div style="text-align: center; color: #777; padding: 1.5rem; background: #FFF; border-radius: 12px; margin-bottom: 2.5rem; border: 1px dashed #CBD5E1;">
+                <i class="fa-solid fa-hand-pointer" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary-gold);"></i>
+                <p>اضغطي على أي مزرعة من القائمة أعلاه لعرض تفاصيلها وبياناتها هنا مباشرة</p>
             </div>
         </div>
-    </div>
 
-    <!-- Section 2: قالوا عن البن -->
-    <div id="tab-quotes" class="section-page">
-        <div class="main-container" style="grid-template-columns: 1fr;">
-            <div class="info-card">
-                <h2 style="font-family:'Amiri',serif; font-size:1.8rem; color:var(--primary-dark); margin-bottom:1rem;">
-                    <i class="fa-solid fa-book-open"></i> قالوا عن البن والقهوة في رجال ألمع
-                </h2>
-                <blockquote style="border-right: 4px solid var(--accent-red); padding-right: 1rem; font-size: 1.1rem; font-style: italic; margin-bottom: 1.2rem;">
-                    "القهوة في رجال ألمع ليست مجرد مشروب، بل هي حكاية كرم وتاريخ يرويه الجبل والأرض المعطاءة، تتنفس بها جبال صلب وتفوح عبقاً في كل محفل."
-                </blockquote>
-                <blockquote style="border-right: 4px solid var(--gold); padding-right: 1rem; font-size: 1.05rem; font-style: italic; margin-bottom: 1.5rem; background: #F8FAF8; padding: 1rem; border-radius: 8px;">
-                    "وفي كفّ المصفّي صويحب البن.. تروي حباته السوداء قصة عرق الرجال وفخر المدرجات العمانية والألمعية."
-                </blockquote>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
-                    <div style="background: #F8FAF8; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem; font-family: 'Amiri', serif; font-size: 1.2rem;">من تراث المكان</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">ارتبط البن الخولاني في رجال ألمع بالمناسبات الوطنية والاجتماعية، وكان عنواناً للضيافة الفاخرة واستقبال الضيوف في الحصون التاريخية.</p>
+        <!-- نموذج إرسال بيانات المزارعة (مربوط بـ Formspree) -->
+        <div class="form-section">
+            <h3><i class="fa-solid fa-pen-to-square"></i> نموذج إرسال بيانات المزرعة</h3>
+            <form action="https://formspree.io/f/xeaagdlp" method="POST">
+                <div class="form-group">
+                    <label>اسم المزارع:</label>
+                    <input type="text" name="اسم_المزرعة" required placeholder="مثال: مزارع آل فلان">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>عدد الأشجار:</label>
+                        <input type="number" name="عدد_الأشجار" required placeholder="مثال: 350">
                     </div>
-                    <div style="background: #F8FAF8; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem; font-family: 'Amiri', serif; font-size: 1.2rem;">رؤية الأدباء</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">وثّق شعراء وأدباء جمعية الأدب المهنية برجال ألمع مسيرة شجرة البن في قصائد نبطية وفصيحة خالدة تخلد تراب هذه الأرض.</p>
+                    <div class="form-group">
+                        <label>الارتفاع (متر):</label>
+                        <input type="number" name="الارتفاع" required placeholder="مثال: 1600">
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Section 3: مهرجانات البن -->
-    <div id="tab-festivals" class="section-page">
-        <div class="main-container" style="grid-template-columns: 1fr;">
-            <div class="info-card">
-                <h2 style="font-family:'Amiri',serif; font-size:1.8rem; color:var(--primary-dark); margin-bottom:1rem;">
-                    <i class="fa-solid fa-champagne-glasses"></i> مهرجانات البن في رجال ألمع (المواسم الثلاثة)
-                </h2>
-                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">توثيق إحصائيات ومعارض مواسم مهرجان البن السنوي بالمنطقة:</p>
-
-                <div class="festivals-grid">
-                    <div class="festival-card">
-                        <span class="badge-tag">موسم 2024</span>
-                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الأول (2024)</h3>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">الانطلاقة الكبرى والبداية الرسمية لتوثيق مزارع البن.</p>
-                        <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
-                            <li><strong>عدد الزوار:</strong> 12,000+ زائر.</li>
-                            <li><strong>عدد بيع الشتلات:</strong> 3,500 شتلة خولانية.</li>
-                            <li><strong>حجم المبيعات:</strong> 2.5 طن من البن.</li>
-                        </ul>
-                    </div>
-
-                    <div class="festival-card">
-                        <span class="badge-tag">موسم 2025</span>
-                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الثاني (2025)</h3>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">توسع كبير في الفعاليات وإقبال واسع من المهتمين.</p>
-                        <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
-                            <li><strong>عدد الزوار:</strong> 25,000+ زائر.</li>
-                            <li><strong>عدد بيع الشتلات:</strong> 7,200 شتلة.</li>
-                            <li><strong>حجم المبيعات:</strong> تجاوزت 5 أطنان.</li>
-                        </ul>
-                    </div>
-
-                    <div class="festival-card">
-                        <span class="badge-tag badge-update">الموسم الحالي</span>
-                        <h3 style="color:var(--primary-dark); margin-bottom:0.5rem; font-family:'Amiri',serif; font-size:1.3rem;">المهرجان الثالث</h3>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 0.8rem;">آفاق جديدة وتوثيق مستمر لأحدث الإحصائيات..</p>
-                        <ul style="padding-right: 1rem; font-size: 0.85rem; color: var(--text-main);">
-                            <li><strong>عدد الزوار:</strong> قيد التحديث (تغطية تصاعدية).</li>
-                            <li><strong>عدد بيع الشتلات:</strong> جاري حصرها وربطها بالمشتل الرئيسي.</li>
-                            <li><strong>حجم المبيعات:</strong> إحصائيات قيد المراجعة.</li>
-                        </ul>
-                    </div>
+                <div class="form-group">
+                    <label>نوع البن المستزرع:</label>
+                    <input type="text" name="نوع_البن" required placeholder="مثال: بن خولاني عسيري فاخر">
                 </div>
-            </div>
+
+                <button type="submit" class="submit-btn">إرسال البيانات</button>
+            </form>
         </div>
+
     </div>
 
     <script>
-        function switchTab(tabName) {
-            document.querySelectorAll('.section-page').forEach(sec => sec.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('tab-' + tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
+        // قاعدة بيانات المزارع لتظهر فور الضغط عليها في الفراغ المخصص
+        const farmsData = {
+            yasser: { name: "مزارع الياسر (جبل قيس)", location: "جبل قيس - رجال ألمع", trees: "750", height: "1600 متر", type: "بن خولاني عسيري", map: "https://maps.google.com" },
+            rawabi: { name: "مزرعة الروابي", location: "جبل صلب - رجال ألمع", trees: "600", height: "1550 متر", type: "بن خولاني فاخر", map: "https://maps.google.com" },
+            qaisi: { name: "مزارع محمد أحمد القيسي", location: "رجال ألمع", trees: "400", height: "1500 متر", type: "بن خولاني", map: "https://maps.google.com" },
+            mesfer: { name: "مزارع محمد أحمد مسفر", location: "رجال ألمع", trees: "350", height: "1480 متر", type: "بن خولاني أصلي", map: "https://maps.google.com" },
+            nasser: { name: "مزارع محمد عبدالله ناصر", location: "رجال ألمع", trees: "300", height: "1450 متر", type: "بن خولاني", map: "https://maps.google.com" },
+            fahmi: { name: "مزارع محمد يحيى الفاحمي", location: "رجال ألمع", trees: "250", height: "1400 متر", type: "بن خولاني عسيري", map: "https://maps.google.com" },
+            hasi: { name: "مزارع عايض أحمد آل حاصي", location: "رجال ألمع", trees: "200", height: "1380 متر", type: "بن خولاني", map: "https://maps.google.com" },
+            wujayf: { name: "مزرعة الوجيف", location: "رجال ألمع", trees: "150", height: "1350 متر", type: "بن خولاني", map: "https://maps.google.com" },
+            nokhba: { name: "مزرعة نخبة البن", location: "رجال ألمع", trees: "100", height: "1300 متر", type: "بن خولاني فاخر", map: "https://maps.google.com" }
+        };
+
+        function showFarm(farmKey) {
+            const farm = farmsData[farmKey];
+            const container = document.getElementById('farmDetailsContainer');
+            
+            container.innerHTML = `
+                <div class="farm-card active">
+                    <h2>${farm.name}</h2>
+                    <span class="location-tag"><i class="fa-solid fa-location-dot"></i> ${farm.location}</span>
+                    
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <div class="val">${farm.trees} شجرة</div>
+                            <div class="lbl"><i class="fa-solid fa-tree"></i> عدد الأشجار</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="val">${farm.height}</div>
+                            <div class="lbl"><i class="fa-solid fa-mountain"></i> الارتفاع عن سطح البحر</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem; background: #F9FBF9; padding: 1rem; border-radius: 10px; border: 1px solid #E2E8F0;">
+                        <strong><i class="fa-solid fa-seedling" style="color: #C5A059;"></i> نوع البن المستزرع:</strong> ${farm.type}
+                    </div>
+
+                    <a href="${farm.map}" target="_blank" class="map-btn"><i class="fa-solid fa-map-location-dot"></i> فتح في خرائط Google</a>
+                </div>
+            `;
         }
     </script>
 </body>
