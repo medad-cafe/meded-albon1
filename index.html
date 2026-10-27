@@ -41,17 +41,17 @@
         }
 
         header {
-          header {
-    /* إضافة صورة الخلفية مع تدرج لوني داكن وشفاف فوقها لتوضيح النصوص */
-    background: linear-gradient(135deg, rgba(28, 40, 38, 0.90) 0%, rgba(17, 26, 25, 0.92) 100%), url('1.PNG');
-    background-size: cover;
-    background-position: center;
-    color: #FFF;
-    padding: 2rem 2rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    position: relative;
-    z-index: 10;
-}
+            background: linear-gradient(135deg, rgba(28, 40, 38, 0.88) 0%, rgba(17, 26, 25, 0.92) 100%), url('1');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #FFF;
+            padding: 2rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -276,13 +276,12 @@
             font-weight: 600;
         }
 
-        /* دبابيس الخريطة التفاعلية القابلة للنقر */
         .map-pin {
             position: absolute;
             transform: translate(-50%, -50%);
             cursor: pointer;
             z-index: 5;
-            transition: transform 0.25s ease, filter 0.2s;
+            transition: transform 0.25s ease;
             text-align: center;
             text-decoration: none;
         }
@@ -432,7 +431,7 @@
                 <div class="info-card">
                     <div class="card-header-bg">
                         <h2 class="village-title"><i class="fa-solid fa-list-check"></i> دليل مزارع البن الشامل</h2>
-                        <span style="font-size:0.85rem;"><i class="fa-solid fa-location-dot"></i> رجال ألمع وجبل قيس</span>
+                        <span style="font-size:0.85rem;"><i class="fa-solid fa-location-dot"></i> رجال ألمع</span>
                     </div>
 
                     <!-- قائمة المزارع التفاعلية -->
@@ -460,7 +459,7 @@
                             <a href="https://maps.google.com" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
                         </div>
 
-                        <!-- 3. مزرعة محمد أحمد القيسي -->
+                        <!-- 3. مزارع محمد أحمد القيسي -->
                         <div class="farm-item-card">
                             <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد القيسي</h4>
                             <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
@@ -470,7 +469,7 @@
                             <a href="https://maps.google.com/?q=18.1566928,42.3117067" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
                         </div>
 
-                        <!-- 4. مزرعة محمد أحمد مسفر -->
+                        <!-- 4. مزارع محمد أحمد مسفر -->
                         <div class="farm-item-card">
                             <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد أحمد مسفر</h4>
                             <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
@@ -480,7 +479,7 @@
                             <a href="https://maps.google.com/?q=18.1575587,42.3104454" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
                         </div>
 
-                        <!-- 5. مزرعة محمد عبدالله ناصر -->
+                        <!-- 5. مزارع محمد عبدالله ناصر -->
                         <div class="farm-item-card">
                             <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد عبدالله ناصر</h4>
                             <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
@@ -490,7 +489,7 @@
                             <a href="https://maps.google.com/?q=18.1508413,42.3247332" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
                         </div>
 
-                        <!-- 6. مزرعة محمد يحيى الفاحمي -->
+                        <!-- 6. مزارع محمد يحيى الفاحمي -->
                         <div class="farm-item-card">
                             <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع محمد يحيى الفاحمي</h4>
                             <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
@@ -500,7 +499,7 @@
                             <a href="https://maps.google.com/?q=18.1464957,42.3217630" target="_blank" class="btn-map-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح في خرائط Google</a>
                         </div>
 
-                        <!-- 7. مزرعة عايض أحمد آل حاصي -->
+                        <!-- 7. مزارع عايض أحمد آل حاصي -->
                         <div class="farm-item-card">
                             <h4 style="color:var(--primary-dark); font-size:1.05rem;"><i class="fa-solid fa-tree" style="color:var(--accent-red);"></i> مزارع عايض أحمد آل حاصي</h4>
                             <div class="data-grid" style="margin-top:0.5rem; margin-bottom:0.5rem;">
@@ -548,7 +547,7 @@
                     </h3>
                     <ul style="padding-right:1.2rem; font-size:0.9rem; color:var(--text-main);">
                         <li style="margin-bottom:0.4rem;">توثيق شامل لمزارع ومزارعي رجال ألمع.</li>
-                        <li style="margin-bottom:0.4rem;">أنواع البن الخولاني الألمعي وأماكن بيع الشتلات.</li>
+                        <li style="margin-bottom:0.4rem;">أنواع البن وأماكن بيع الشتلات.</li>
                     </ul>
 
                     <div class="nafath-box">
@@ -561,7 +560,7 @@
                 </div>
             </div>
 
-            <!-- الخريطة التوضيحية التفاعلية مع كافة دبابيس المزارع وروابط الإحداثيات المباشرة -->
+            <!-- الخريطة التوضيحية التفاعلية مع دبابيس المزارع وروابط الإحداثيات المباشرة -->
             <div class="map-section">
                 <div class="map-header">
                     <h2 class="map-title">
@@ -582,63 +581,52 @@
                     <span class="map-label-location" style="bottom: 28%; right: 28%;">وادي الظهرة</span>
                     <span class="map-label-location" style="top: 15%; right: 25%;">جبل قيس</span>
 
-                    <!-- دبابيس المزارع التفاعلية (قابلة للنقر وتفتح خرائط قوقل مباشرة) -->
-                    
-                    <!-- 1. مزارع الياسر -->
+                    <!-- دبابيس المزارع التفاعلية -->
                     <a href="https://maps.google.com/?q=18.155306,42.312222" target="_blank" class="map-pin highlight" style="top: 22%; left: 45%;">
                         <div class="pin-pill"><i class="fa-solid fa-mountain"></i> مزارع الياسر (جبل قيس)</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 2. مزرعة الروابي -->
                     <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 32%; left: 52%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الروابي</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 3. مزارع محمد أحمد القيسي -->
                     <a href="https://maps.google.com/?q=18.1566928,42.3117067" target="_blank" class="map-pin" style="top: 38%; left: 62%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 4. مزارع محمد أحمد مسفر -->
                     <a href="https://maps.google.com/?q=18.1575587,42.3104454" target="_blank" class="map-pin" style="top: 46%; left: 38%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 5. مزارع محمد عبدالله ناصر -->
                     <a href="https://maps.google.com/?q=18.1508413,42.3247332" target="_blank" class="map-pin" style="top: 54%; left: 66%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 6. مزارع محمد يحيى الفاحمي -->
                     <a href="https://maps.google.com/?q=18.1464957,42.3217630" target="_blank" class="map-pin" style="top: 62%; left: 42%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع محمد يحيى الفاحمي</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 7. مزارع عايض أحمد آل حاصي -->
                     <a href="https://maps.google.com/?q=18.1559594,42.3122586" target="_blank" class="map-pin" style="top: 70%; left: 58%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 8. مزرعة الوجيف -->
                     <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 78%; left: 32%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة الوجيف</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 9. مزرعة أبناء زاهر -->
                     <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 84%; left: 50%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة أبناء زاهر</div>
                         <div class="pin-arrow"></div>
                     </a>
 
-                    <!-- 10. مزرعة نخبة البن -->
                     <a href="https://maps.google.com" target="_blank" class="map-pin" style="top: 82%; left: 72%;">
                         <div class="pin-pill"><i class="fa-solid fa-tree"></i> مزرعة نخبة البن</div>
                         <div class="pin-arrow"></div>
