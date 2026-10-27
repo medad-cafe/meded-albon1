@@ -11,6 +11,7 @@
         :root {
             --primary-dark: #1C2826;
             --primary-gold: #C5A059;
+            --nafath-green: #006837;
             --canvas-bg: #F4F7F4;
             --card-bg: #FFFFFF;
             --text-main: #2C3E35;
@@ -29,7 +30,7 @@
             line-height: 1.6;
         }
 
-        /* الهيدر الفخم مع خلفية الصورة bon.png */
+        /* الهيدر */
         header {
             background: linear-gradient(135deg, rgba(28, 40, 38, 0.45) 0%, rgba(17, 26, 25, 0.55) 100%), url('bon.png');
             background-size: cover;
@@ -64,7 +65,6 @@
             font-weight: 500;
         }
 
-        /* الإحصائيات مع عداد الزوار */
         .stats-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -107,7 +107,7 @@
             text-align: center;
         }
 
-        /* الخريطة الجغرافية التفاعلية */
+        /* الخريطة الجغرافية */
         .geo-map-box {
             background: #EAEFEA;
             border: 1px solid #D0DDD0;
@@ -197,7 +197,6 @@
             margin-bottom: 1.2rem;
         }
 
-        /* الفراغ التفاعلي لبيانات المزرعة */
         .details-display-area {
             background: var(--card-bg);
             border-radius: 16px;
@@ -206,7 +205,6 @@
             border-top: 5px solid var(--primary-gold);
             margin-bottom: 2.5rem;
             min-height: 180px;
-            transition: all 0.3s ease;
         }
 
         .farm-title-header {
@@ -270,6 +268,51 @@
 
         .google-map-btn:hover {
             background: #2D403C;
+        }
+
+        /* شريط بطاقة النفاذ الوطني */
+        .nafath-banner {
+            background: #EBF7EE;
+            border: 2px dashed var(--nafath-green);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .nafath-btn {
+            background: var(--nafath-green);
+            color: #FFFFFF;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0.8rem;
+            box-shadow: 0 4px 12px rgba(0, 104, 55, 0.2);
+            transition: background 0.3s;
+        }
+
+        .nafath-btn:hover {
+            background: #004d28;
+        }
+
+        .user-logged-badge {
+            display: none;
+            background: #D4EDDA;
+            color: #155724;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            border: 1px solid #C3E6CB;
         }
 
         /* قسم قالوا عن البن */
@@ -385,6 +428,48 @@
             font-weight: 700;
             cursor: pointer;
         }
+
+        /* نافذة النفاذ الوطني Popup */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border-top: 6px solid var(--nafath-green);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .modal-box h3 {
+            color: var(--nafath-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .random-code {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--nafath-green);
+            letter-spacing: 4px;
+            margin: 1rem 0;
+            background: #F0FDF4;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px dashed var(--nafath-green);
+        }
     </style>
 </head>
 <body>
@@ -426,12 +511,11 @@
 
         <div class="geo-map-box">
             <div class="geo-oval-container">
-                <span class="val-label val-rwam">روام ووسانب</span>
+                <span class="val-label val-rwam">روام و وسانب</span>
                 <span class="val-label val-aows">وادي العوص</span>
-                <span class="val-label val-zhrah">جبل قيس </span>
+                 <span class="val-label val-aows">جبل قيس </span>
                 <span class="val-label val-rtham">العاينه </span>
 
-                <!-- جميع المزارع التسع مرتبة على الخريطة -->
                 <button class="farm-geo-card active" onclick="loadFarmData('rawabi', this)">
                     <i class="fa-solid fa-tree"></i> مزرعة الروابي
                 </button>
@@ -455,32 +539,12 @@
                 <button class="farm-geo-card" onclick="loadFarmData('nokhba', this)">
                     <i class="fa-solid fa-tree"></i> مزرعة نخبة البن
                 </button>
-                <div class="card-arrow"></div>
-
-                <button class="farm-geo-card" onclick="loadFarmData('qaisi', this)">
-                    <i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي
-                </button>
-                <div class="card-arrow"></div>
-
-                <button class="farm-geo-card" onclick="loadFarmData('mesfer', this)">
-                    <i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر
-                </button>
-                <div class="card-arrow"></div>
-
-                <button class="farm-geo-card" onclick="loadFarmData('nasser', this)">
-                    <i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر
-                </button>
-                <div class="card-arrow"></div>
-
-                <button class="farm-geo-card" onclick="loadFarmData('hasi', this)">
-                    <i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي
-                </button>
             </div>
         </div>
 
-        <!-- الفراغ التفاعلي لبيانات المزرعة (بدون نوع البن) -->
+        <!-- الفراغ التفاعلي لبيانات المزرعة -->
         <div id="farmDetailsDisplay" class="details-display-area">
-            <!-- تحميل بيانات المزرعة هنا -->
+            <!-- تحميل بيانات المزرعة -->
         </div>
 
         <!-- قسم قالوا عن البن -->
@@ -502,9 +566,23 @@
                 </div>
             </div>
 
-            <div class="add-quote-box">
+            <!-- حظر إضافة الأبيات إلا بالنفاذ -->
+            <div id="quotesAuthNotice" class="nafath-banner">
+                <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--nafath-green);"></i>
+                <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة الأبيات الشعرية تسجيل الدخول عبر نفاذ</h4>
+                <button class="nafath-btn" onclick="openNafathModal('quote')"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
+            </div>
+
+            <!-- شريط المستخدم المسجل عبر نفاذ -->
+            <div id="quotesUserBadge" class="user-logged-badge">
+                <span><i class="fa-solid fa-circle-check"></i> تم التوثيق بنجاح عبر النفاذ الوطني الموحد</span>
+                <button onclick="logoutNafath()" style="background:none; border:none; color:#721c24; cursor:pointer; font-weight:700;">تسجيل الخروج</button>
+            </div>
+
+            <!-- نموذج إضافة بيت شعر جديد -->
+            <div class="add-quote-box" id="addQuoteForm" style="opacity: 0.5; pointer-events: none;">
                 <h4 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-pen-nib"></i> شاركنا ببيتٍ أو قيل في البن:</h4>
-                <input type="text" id="authorName" placeholder="اسم الشاعر / المشارك (اختياري)">
+                <input type="text" id="authorName" placeholder="اسم الشاعر / المشارك">
                 <textarea id="quoteContent" rows="3" placeholder="اكتبي البيت أو الأبيات هنا..."></textarea>
                 <button class="add-quote-btn" onclick="addNewQuote()"><i class="fa-solid fa-paper-plane"></i> إضافة الأبيات للموقع</button>
             </div>
@@ -513,10 +591,23 @@
         <!-- نموذج تسجيل المزرعة Formspree -->
         <div class="form-section">
             <h3 style="margin-bottom: 1rem; color: #1C2826;"><i class="fa-solid fa-pen-to-square"></i> نموذج تسجيل مزارع البن</h3>
-            <form action="https://formspree.io/f/xeaagdlp" method="POST">
+            
+            <!-- حظر تسجيل المزرعة إلا بالنفاذ -->
+            <div id="farmAuthNotice" class="nafath-banner">
+                <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: var(--nafath-green);"></i>
+                <h4 style="margin-top: 0.5rem; color: #1C2826;">يتطلب إضافة وتسجيل المزارع التوثيق عبر النفاذ الوطني</h4>
+                <button class="nafath-btn" onclick="openNafathModal('farm')"><i class="fa-solid fa-id-card"></i> تسجيل الدخول عبر نفاذ</button>
+            </div>
+
+            <div id="farmUserBadge" class="user-logged-badge">
+                <span><i class="fa-solid fa-circle-check"></i> تم التوثيق عبر النفاذ الوطني الموحد</span>
+                <button onclick="logoutNafath()" style="background:none; border:none; color:#721c24; cursor:pointer; font-weight:700;">تسجيل الخروج</button>
+            </div>
+
+            <form id="farmRegisterForm" action="https://formspree.io/f/xeaagdlp" method="POST" style="opacity: 0.5; pointer-events: none;">
                 <div class="form-group">
                     <label>اسم المزرعة / المزارع:</label>
-                    <input type="text" name="اسم_المزرعة" required placeholder="مثال: مزرعة الروابي">
+                    <input type="text" id="farmFormName" name="اسم_المزرعة" required placeholder="مثال: مزرعة الروابي">
                 </div>
                 
                 <div class="form-row">
@@ -536,19 +627,28 @@
 
     </div>
 
+    <!-- نافذة محاكاة دخول نفاذ الموحد -->
+    <div class="modal-overlay" id="nafathModal">
+        <div class="modal-box">
+            <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--nafath-green);"></i>
+            <h3>النفاذ الوطني الموحد</h3>
+            <p style="font-size: 0.85rem; color: #555;">يرجى تأكيد الطلب من خلال تطبيق نفاذ باختيار الرقم التالي:</p>
+            <div class="random-code" id="nafathCode">42</div>
+            <p style="font-size: 0.8rem; color: #888; margin-bottom: 1rem;">جاري التوثيق وتأكيد الهوية...</p>
+            <button class="nafath-btn" style="width: 100%; justify-content: center;" onclick="confirmNafathLogin()">تأكيد التوثيق والدخول</button>
+        </div>
+    </div>
+
     <script>
-        // قاعدة بيانات جميع المزارع التسع (بدون نوع البن وبمواقع دقيقة وروابط خرائط جوجل)
         const farmsDatabase = {
-            rawabi: { name: "مزرعة الروابي", location: "جبل صلب - رجال ألمع", trees: "600", height: "1550 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            rawabi: { name: "مزرعة الروابي", location: " جبل صلب - رجال ألمع", trees: "600", height: "1550 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
             yasser: { name: "مزارع الياسر (جبل قيس)", location: "جبل قيس - رجال ألمع", trees: "750", height: "1600 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
             zaher: { name: "مزرعة أبناء زاهر", location: "وادي العوص - رجال ألمع", trees: "650", height: "1500 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
             wujayf: { name: "مزرعة الوجيف", location: "وادي العوص - رجال ألمع", trees: "250", height: "1350 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
-            nokhba: { name: "مزرعة نخبة البن", location: "حسوه - رجال ألمع", trees: "450", height: "1300 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
-            qaisi: { name: "مزارع محمد أحمد القيسي", location: "جبل قيس - رجال ألمع", trees: "500", height: "1500 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
-            mesfer: { name: "مزارع محمد أحمد مسفر", location: "رجال ألمع",trees: "450", height: "1480 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
-            nasser: { name: "مزارع محمد عبدالله ناصر", location: "رجال ألمع", trees: "400", height: "1450 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
-            hasi: { name: "مزارع عايض أحمد آل حاصي", location: "رجال ألمع", trees: "300", height: "1380 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" }
+            nokhba: { name: "مزرعة نخبة البن", location: "حسوه - رجال ألمع", trees: "450", height: "1300 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" }
         };
+
+        let isNafathAuthenticated = false;
 
         function loadFarmData(key, element) {
             document.querySelectorAll('.farm-geo-card').forEach(btn => btn.classList.remove('active'));
@@ -578,6 +678,53 @@
             `;
         }
 
+        /* إدارة نفاذ */
+        function openNafathModal(type) {
+            const code = Math.floor(10 + Math.random() * 89);
+            document.getElementById('nafathCode').innerText = code;
+            document.getElementById('nafathModal').style.display = 'flex';
+        }
+
+        function confirmNafathLogin() {
+            isNafathAuthenticated = true;
+            localStorage.setItem('nafath_auth', 'true');
+            document.getElementById('nafathModal').style.display = 'none';
+            applyNafathState();
+            alert('تم توثيق هويتك بنجاح عبر النفاذ الوطني الموحد! يمكنك الآن الإضافة والتسجيل.');
+        }
+
+        function logoutNafath() {
+            isNafathAuthenticated = false;
+            localStorage.removeItem('nafath_auth');
+            applyNafathState();
+        }
+
+        function applyNafathState() {
+            const auth = localStorage.getItem('nafath_auth') === 'true';
+
+            if(auth) {
+                document.getElementById('quotesAuthNotice').style.display = 'none';
+                document.getElementById('quotesUserBadge').style.display = 'flex';
+                document.getElementById('addQuoteForm').style.opacity = '1';
+                document.getElementById('addQuoteForm').style.pointerEvents = 'auto';
+
+                document.getElementById('farmAuthNotice').style.display = 'none';
+                document.getElementById('farmUserBadge').style.display = 'flex';
+                document.getElementById('farmRegisterForm').style.opacity = '1';
+                document.getElementById('farmRegisterForm').style.pointerEvents = 'auto';
+            } else {
+                document.getElementById('quotesAuthNotice').style.display = 'block';
+                document.getElementById('quotesUserBadge').style.display = 'none';
+                document.getElementById('addQuoteForm').style.opacity = '0.5';
+                document.getElementById('addQuoteForm').style.pointerEvents = 'none';
+
+                document.getElementById('farmAuthNotice').style.display = 'block';
+                document.getElementById('farmUserBadge').style.display = 'none';
+                document.getElementById('farmRegisterForm').style.opacity = '0.5';
+                document.getElementById('farmRegisterForm').style.pointerEvents = 'none';
+            }
+        }
+
         function setupVisitorCounter() {
             let count = localStorage.getItem('site_visitors') || 1248;
             count = parseInt(count) + 1;
@@ -593,18 +740,23 @@
                 card.className = 'quote-card';
                 card.innerHTML = `
                     <div class="quote-text">${q.text}</div>
-                    <div class="quote-author">— ${q.author || 'مشارك زائر'}</div>
+                    <div class="quote-author">— ${q.author || 'مشارك زائر (موثق)'}</div>
                 `;
                 container.appendChild(card);
             });
         }
 
         function addNewQuote() {
+            if(!localStorage.getItem('nafath_auth')) {
+                alert('عذراً! يلزم تسجيل الدخول عبر النفاذ الوطني أولاً.');
+                return;
+            }
+
             const textInput = document.getElementById('quoteContent');
             const authorInput = document.getElementById('authorName');
 
             const text = textInput.value.trim();
-            const author = authorInput.value.trim() || 'مشارك زائر';
+            const author = authorInput.value.trim() || 'مشارك زائر (موثق)';
 
             if (!text) {
                 alert('لطفاً اكتبي الأبيات قبل الإضافة!');
@@ -627,13 +779,14 @@
 
             textInput.value = '';
             authorInput.value = '';
-            alert('تمت إضافة الأبيات بنجاح إلى قائمة قالوا عن البن! ✨☕');
+            alert('تمت إضافة الأبيات الموثقة بنجاح! ✨☕');
         }
 
         window.onload = function() {
             loadFarmData('rawabi', document.querySelector('.farm-geo-card.active'));
             setupVisitorCounter();
             loadSavedQuotes();
+            applyNafathState();
         };
     </script>
 </body>
