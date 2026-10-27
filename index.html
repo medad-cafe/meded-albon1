@@ -197,15 +197,95 @@
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
             padding: 1.3rem;
+            display: flex;
+            flex-direction: column;
         }
 
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .map-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .map-hint {
+            font-size: 0.85rem;
+            color: var(--accent-red);
+            background: #FDF3F0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid rgba(163, 74, 40, 0.2);
+        }
+
+        /* تصميم الخريطة بالدبابيس والأسهم الأصلية */
         .map-wrapper {
+            position: relative;
             width: 100%;
-            height: 520px;
+            height: 560px;
+            background: #EFF4EF;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
-            margin-top: 1rem;
+        }
+
+        .map-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .map-pin {
+            position: absolute;
+            transform: translate(-50%, -100%);
+            cursor: pointer;
+            z-index: 5;
+            transition: transform 0.25s ease;
+        }
+
+        .map-pin:hover, .map-pin.active {
+            transform: translate(-50%, -115%) scale(1.15);
+            z-index: 8;
+        }
+
+        .pin-body {
+            background: var(--primary-dark);
+            color: #FFF;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 2px solid var(--gold);
+            white-space: nowrap;
+        }
+
+        .map-pin.active .pin-body {
+            background: var(--accent-red);
+        }
+
+        .pin-pointer {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid var(--primary-dark);
+            margin: 0 auto;
+        }
+
+        .map-pin.active .pin-pointer {
+            border-top-color: var(--accent-red);
         }
 
         .festivals-grid {
@@ -245,6 +325,7 @@
             margin-top: 1.2rem;
         }
 
+        /* زر النفاذ المباشر */
         .nafath-btn {
             background: var(--nafath-green);
             color: #FFF;
@@ -258,7 +339,14 @@
             align-items: center;
             gap: 0.5rem;
             margin-top: 0.8rem;
+            text-decoration: none;
             font-family: 'Tajawal', sans-serif;
+            transition: opacity 0.2s;
+        }
+
+        .nafath-btn:hover {
+            opacity: 0.9;
+            color: #FFF;
         }
 
         @media (max-width: 992px) {
@@ -333,22 +421,43 @@
                         <li style="margin-bottom:0.4rem;">أنواع البن الخولاني الألمعي وأماكن بيع الشتلات.</li>
                     </ul>
 
+                    <!-- رابط النفاذ الوطني المباشر -->
                     <div class="nafath-box">
                         <h4 style="color:var(--primary-dark); font-size:1rem; margin-bottom:0.3rem;">التسجيل وشبكة المهتمين</h4>
-                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">سجل دخولك لإضافة مزرعتك إلى الدليل</p>
-                        <button class="nafath-btn" onclick="alert('جاري التحويل إلى النفاذ الوطني الموحد..')">
+                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">سجل دخولك المباشر لإضافة مزرعتك في الدليل</p>
+                        <a href="https://www.iam.gov.sa" target="_blank" class="nafath-btn">
                             <i class="fa-solid fa-key"></i> الدخول عبر النفاذ الوطني الموحد
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- خريطة الأسهم والدبابيس التفاعلية الأصلية -->
             <div class="map-section">
-                <h2 style="font-family:'Amiri',serif; font-size:1.5rem; color:var(--primary-dark);">
-                    <i class="fa-solid fa-map-marked-alt"></i> الخريطة الجغرافية التفاعلية
-                </h2>
+                <div class="map-header">
+                    <h2 class="map-title">
+                        <i class="fa-solid fa-map-marked-alt"></i> الخريطة الجغرافية التفاعلية
+                    </h2>
+                    <span class="map-hint"><i class="fa-solid fa-hand-pointer"></i> اضغط على أي مزرعة بالخريطة</span>
+                </div>
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120000!2d42.3!3d18.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDEyJzAwLjAiTiA0MgKwMTgnMDAuMCJF!5e0!3m2!1sar!2ssa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- خلفية خريطة جمالية -->
+                    <img src="1.PNG" alt="خريطة رجال ألمع" class="map-bg-img">
+                    
+                    <!-- دبابيس مزارع البن (بنفس نظام الأسهم والأيقونات الخاص بك) -->
+                    <div class="map-pin active" style="top: 35%; left: 45%;">
+                        <div class="pin-body">
+                            <i class="fa-solid fa-seedling"></i> مزرعة الروابي (1600م)
+                        </div>
+                        <div class="pin-pointer"></div>
+                    </div>
+
+                    <div class="map-pin" style="top: 55%; left: 65%;">
+                        <div class="pin-body">
+                            <i class="fa-solid fa-seedling"></i> جبل صلب
+                        </div>
+                        <div class="pin-pointer"></div>
+                    </div>
                 </div>
             </div>
         </div>
