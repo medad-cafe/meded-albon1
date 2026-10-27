@@ -29,7 +29,7 @@
             line-height: 1.6;
         }
 
-        /* 1. الهيدر الفخم مع خلفية الصورة bon.png */
+        /* الهيدر الفخم مع خلفية الصورة bon.png */
         header {
             background: linear-gradient(135deg, rgba(28, 40, 38, 0.45) 0%, rgba(17, 26, 25, 0.55) 100%), url('bon.png');
             background-size: cover;
@@ -107,14 +107,7 @@
             text-align: center;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* 2. رسمة وتصميم الخريطة الجغرافية التفاعلية المطابقة للصورة */
+        /* الخريطة الجغرافية التفاعلية */
         .geo-map-box {
             background: #EAEFEA;
             border: 1px solid #D0DDD0;
@@ -137,11 +130,10 @@
             background: rgba(255, 255, 255, 0.3);
             display: flex;
             flex-direction: column;
-            gap: 1.4rem;
+            gap: 1rem;
             align-items: center;
         }
 
-        /* أسماء الأودية والمعالم المكتوبة حول الرسمة البيضاوية */
         .val-label {
             position: absolute;
             font-size: 0.85rem;
@@ -153,20 +145,19 @@
         .val-zhrah { bottom: 30%; left: 20px; }
         .val-rtham { bottom: 15px; left: 40px; }
 
-        /* كروت أزرار المزارع داخل الرسم البيضاوي */
         .farm-geo-card {
             background: var(--primary-dark);
             color: #FFFFFF;
             border: 2px solid var(--primary-gold);
-            padding: 0.85rem 1.5rem;
+            padding: 0.75rem 1.2rem;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            width: 85%;
+            width: 90%;
             max-width: 320px;
             text-align: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
             position: relative;
             z-index: 5;
@@ -176,26 +167,20 @@
             gap: 8px;
         }
 
-        .farm-geo-card.highlight {
-            background: #8B4513;
-            border-color: #FFD700;
-        }
-
         .farm-geo-card:hover, .farm-geo-card.active {
             background: #C5A059;
             color: #1C2826;
             border-color: #1C2826;
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
-        /* سهم الاتصال بين الكروت */
         .card-arrow {
             width: 0;
             height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-top: 8px solid #1C2826;
-            margin: -8px 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 7px solid #1C2826;
+            margin: -4px 0;
         }
 
         .tooltip-hint {
@@ -212,7 +197,7 @@
             margin-bottom: 1.2rem;
         }
 
-        /* 3. الفراغ التفاعلي لبيانات المزرعة */
+        /* الفراغ التفاعلي لبيانات المزرعة */
         .details-display-area {
             background: var(--card-bg);
             border-radius: 16px;
@@ -246,36 +231,27 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .info-card-item {
             background: #F8FAF8;
             border: 1px solid #E2E8F0;
-            padding: 0.9rem;
+            padding: 1rem;
             border-radius: 12px;
             text-align: center;
         }
 
         .info-card-item .value {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--primary-dark);
         }
 
         .info-card-item .label {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #666;
-            margin-top: 2px;
-        }
-
-        .coffee-type-box {
-            background: #F8FAF8;
-            padding: 0.9rem;
-            border-radius: 10px;
-            border: 1px solid #E2E8F0;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+            margin-top: 4px;
         }
 
         .google-map-btn {
@@ -296,7 +272,7 @@
             background: #2D403C;
         }
 
-        /* 4. قسم قالوا عن البن */
+        /* قسم قالوا عن البن */
         .quotes-section {
             background: #FFFFFF;
             border-radius: 16px;
@@ -365,7 +341,7 @@
             width: 100%;
         }
 
-        /* 5. نموذج تسجيل المزرعة */
+        /* نموذج تسجيل المزرعة Formspree */
         .form-section {
             background: var(--card-bg);
             padding: 2rem;
@@ -413,7 +389,7 @@
 </head>
 <body>
 
-    <!-- 1. الهيدر الفخم المحدث بفرز عداد الزوار -->
+    <!-- الهيدر مع عداد الزوار -->
     <header>
         <h1>مِـدَادُ الـبَــنّ</h1>
         <p>خريطة وأدب ومهرجانات البن في رجال ألمع</p>
@@ -440,28 +416,29 @@
 
     <div class="container">
         
-        <!-- 2. قسم الخريطة التفاعلية بالرسم الجغرافي المطابق للصورة -->
+        <!-- الخريطة الجغرافية التفاعلية -->
         <div style="text-align: center;">
             <h2 class="section-title">الخريطة الجغرافية التفاعلية</h2>
             <div class="tooltip-hint">
-                <i class="fa-solid fa-hand-pointer"></i> اضغطي على أي مزرعة بالخريطة
+                <i class="fa-solid fa-hand-pointer"></i> اضغطي على أي مزرعة بالخريطة لعرض تفاصيلها
             </div>
         </div>
 
         <div class="geo-map-box">
             <div class="geo-oval-container">
-                <span class="val-label val-rwam">روام و وسانب</span>
+                <span class="val-label val-rwam">روام ووسانب</span>
                 <span class="val-label val-aows">وادي العوص</span>
-                <span class="val-label val-rtham">العاينه</span>
+                <span class="val-label val-zhrah">جبل قيس </span>
+                <span class="val-label val-rtham">العاينه </span>
 
-                <!-- كروت المزارع المرتبة بالشكل البيضاوي -->
-                <button class="farm-geo-card highlight active" onclick="loadFarmData('rawabi', this)">
+                <!-- جميع المزارع التسع مرتبة على الخريطة -->
+                <button class="farm-geo-card active" onclick="loadFarmData('rawabi', this)">
                     <i class="fa-solid fa-tree"></i> مزرعة الروابي
                 </button>
                 <div class="card-arrow"></div>
 
-                <button class="farm-geo-card" onclick="loadFarmData('wujayf', this)">
-                    <i class="fa-solid fa-tree"></i> مزرعة الوجيف
+                <button class="farm-geo-card" onclick="loadFarmData('yasser', this)">
+                    <i class="fa-solid fa-tree"></i> مزارع الياسر (جبل قيس)
                 </button>
                 <div class="card-arrow"></div>
 
@@ -470,18 +447,43 @@
                 </button>
                 <div class="card-arrow"></div>
 
+                <button class="farm-geo-card" onclick="loadFarmData('wujayf', this)">
+                    <i class="fa-solid fa-tree"></i> مزرعة الوجيف
+                </button>
+                <div class="card-arrow"></div>
+
                 <button class="farm-geo-card" onclick="loadFarmData('nokhba', this)">
                     <i class="fa-solid fa-tree"></i> مزرعة نخبة البن
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('qaisi', this)">
+                    <i class="fa-solid fa-tree"></i> مزارع محمد أحمد القيسي
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('mesfer', this)">
+                    <i class="fa-solid fa-tree"></i> مزارع محمد أحمد مسفر
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('nasser', this)">
+                    <i class="fa-solid fa-tree"></i> مزارع محمد عبدالله ناصر
+                </button>
+                <div class="card-arrow"></div>
+
+                <button class="farm-geo-card" onclick="loadFarmData('hasi', this)">
+                    <i class="fa-solid fa-tree"></i> مزارع عايض أحمد آل حاصي
                 </button>
             </div>
         </div>
 
-        <!-- 3. الفراغ التفاعلي لبيانات المزرعة -->
+        <!-- الفراغ التفاعلي لبيانات المزرعة (بدون نوع البن) -->
         <div id="farmDetailsDisplay" class="details-display-area">
-            <!-- يتم تحميل بيانات المزرعة هنا تلقائياً -->
+            <!-- تحميل بيانات المزرعة هنا -->
         </div>
 
-        <!-- 4. قسم قالوا عن البن والتفاعل الشعري -->
+        <!-- قسم قالوا عن البن -->
         <div class="quotes-section">
             <h2 class="section-title" style="text-align: right;"><i class="fa-solid fa-feather-pointed" style="color: #C5A059;"></i> قالوا عن البن والقهوة</h2>
             <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">روائع ما ترنّم به الشعراء في حب البن الأصيل ورمز الضيافة والكرامة</p>
@@ -508,7 +510,7 @@
             </div>
         </div>
 
-        <!-- 5. نموذج تسجيل المزرعة Formspree -->
+        <!-- نموذج تسجيل المزرعة Formspree -->
         <div class="form-section">
             <h3 style="margin-bottom: 1rem; color: #1C2826;"><i class="fa-solid fa-pen-to-square"></i> نموذج تسجيل مزارع البن</h3>
             <form action="https://formspree.io/f/xeaagdlp" method="POST">
@@ -528,7 +530,6 @@
                     </div>
                 </div>
 
-            
                 <button type="submit" class="submit-btn">إرسال البيانات</button>
             </form>
         </div>
@@ -536,12 +537,17 @@
     </div>
 
     <script>
-        // قاعدة بيانات المزارع الجغرافية
+        // قاعدة بيانات جميع المزارع التسع (بدون نوع البن وبمواقع دقيقة وروابط خرائط جوجل)
         const farmsDatabase = {
-            rawabi: { name: "مزرعة الروابي", location: "روام ووسان - رجال ألمع", trees: "750", height: "1600 متر", map: "https://maps.google.com" },
-            wujayf: { name: "مزرعة الوجيف", location: "رجال ألمع", trees: "500", height: "1450 متر", map: "https://maps.google.com" },
-            zaher: { name: "مزرعة أبناء زاهر", location: "وادي العوص - رجال ألمع", trees: "650", height: "1500 متر", map: "https://maps.google.com" },
-            nokhba: { name: "مزرعة نخبة البن", location: "وادي الظهرة - رجال ألمع", trees: "400", height: "1350 متر", map: "https://maps.google.com" }
+            rawabi: { name: "مزرعة الروابي", location: "جبل صلب - رجال ألمع", trees: "600", height: "1550 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            yasser: { name: "مزارع الياسر (جبل قيس)", location: "جبل قيس - رجال ألمع", trees: "750", height: "1600 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            zaher: { name: "مزرعة أبناء زاهر", location: "وادي العوص - رجال ألمع", trees: "650", height: "1500 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            wujayf: { name: "مزرعة الوجيف", location: "وادي العوص - رجال ألمع", trees: "250", height: "1350 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            nokhba: { name: "مزرعة نخبة البن", location: "حسوه - رجال ألمع", trees: "450", height: "1300 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            qaisi: { name: "مزارع محمد أحمد القيسي", location: "جبل قيس - رجال ألمع", trees: "500", height: "1500 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            mesfer: { name: "مزارع محمد أحمد مسفر", location: "رجال ألمع",trees: "450", height: "1480 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            nasser: { name: "مزارع محمد عبدالله ناصر", location: "رجال ألمع", trees: "400", height: "1450 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" },
+            hasi: { name: "مزارع عايض أحمد آل حاصي", location: "رجال ألمع", trees: "300", height: "1380 متر", map: "https://maps.google.com/?q=Rijal+Al-Alma" }
         };
 
         function loadFarmData(key, element) {
@@ -566,17 +572,12 @@
                     </div>
                 </div>
 
-                <div class="coffee-type-box">
-                    <strong><i class="fa-solid fa-seedling" style="color: #C5A059;"></i> نوع البن المستزرع:</strong> ${farm.type}
-                </div>
-
-                <a href="${farm.map}" target="_blank" class="google-map-btn">
-                    <i class="fa-solid fa-map-location-dot"></i> فتح في خرائط Google
+                <a href="${farm.map}" target="_blank" rel="noopener noreferrer" class="google-map-btn">
+                    <i class="fa-solid fa-map-location-dot"></i> فتح موقع المزرعة على خرائط Google
                 </a>
             `;
         }
 
-        // دالة عداد الزوار الحقيقي والمحفوظ
         function setupVisitorCounter() {
             let count = localStorage.getItem('site_visitors') || 1248;
             count = parseInt(count) + 1;
@@ -584,7 +585,6 @@
             document.getElementById('visitorCount').innerText = count.toLocaleString('ar-SA');
         }
 
-        // تحميل الأبيات الشعرية
         function loadSavedQuotes() {
             const saved = JSON.parse(localStorage.getItem('user_quotes') || '[]');
             const container = document.getElementById('quotesContainer');
