@@ -554,16 +554,60 @@ header {
                         <li style="margin-bottom:0.4rem;">أنواع البن وأماكن بيع الشتلات.</li>
                     </ul>
 
-                    <div class="nafath-box">
-                        <h4 style="color:var(--primary-dark); font-size:1rem; margin-bottom:0.3rem;">التسجيل وشبكة المهتمين</h4>
-                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">سجل دخولك المباشر لإضافة مزرعتك في الدليل</p>
-                        <a href="https://www.iam.gov.sa" target="_blank" class="nafath-btn">
-                            <i class="fa-solid fa-key"></i> الدخول عبر النفاذ الوطني الموحد
-                        </a>
-                    </div>
+                   <!-- قسم توثيق النفاذ الوطني وإضافة المزارع -->
+<div class="info-card" style="margin-top: 1.5rem;">
+    <div class="card-header-bg">
+        <h2 class="village-title"><i class="fa-solid fa-id-card-clip"></i> إضافة مزرعة جديدة (نفاذ)</h2>
+        <span style="font-size:0.85rem;"><i class="fa-solid fa-shield-halved"></i> موثق عبر النفاذ الوطني الموحد</span>
+    </div>
+
+    <div style="padding: 0.5rem 0;">
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+            عزيزي المزارع، يمكنك تسجيل دخولك عبر النفاذ الوطني وتعبئة بيانات مزرعتك لتظهر رسمياً في خريطة "مداد البن".
+        </p>
+
+        <!-- خطوة النفاذ الوطني -->
+        <div class="nafath-box" style="margin-bottom: 1.5rem; background: #F0F7F3; border: 1px solid #BCE3CB; border-radius: 14px; padding: 1.2rem; text-align: center;">
+            <h4 style="color:var(--primary-dark); font-size:1rem; margin-bottom:0.3rem;">الخطوة الأولى: التوثيق الرقمي</h4>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.6rem;">تسجيل الدخول الآمن عبر المنصة الوطنية</p>
+            <a href="https://www.iam.gov.sa" target="_blank" class="nafath-btn" style="background: #006837; color: #FFF; padding: 0.8rem 1.6rem; font-weight: bold; font-size: 0.9rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <i class="fa-solid fa-key"></i> الدخول عبر النفاذ الوطني الموحد
+            </a>
+        </div>
+
+        <!-- نموذج إرسال بيانات المزرعة -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+            <h4 style="color: var(--primary-dark); font-size: 1.05rem; font-family: 'Amiri', serif; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem;">
+                الخطوة الثانية: بيانات المزرعة
+            </h4>
+
+            <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">اسم المالك أو المزرعة:</label>
+                <input type="text" name="اسم_المزرعة" required placeholder="مثال: مزارع آل فلان" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                <div>
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">عدد الأشجار:</label>
+                    <input type="number" name="عدد_الأشجار" required placeholder="مثال: 350" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">الارتفاع (متر):</label>
+                    <input type="text" name="الارتفاع" required placeholder="مثال: 1550 متر" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
                 </div>
             </div>
 
+            <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">رابط إحداثيات خرائط Google:</label>
+                <input type="text" name="رابط_الموقع" required placeholder="ألصق رابط موقع المزرعة هنا" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border); font-family: 'Tajawal', sans-serif;">
+            </div>
+
+            <button type="submit" style="background: var(--primary-dark); color: #FFF; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; font-family: 'Tajawal', sans-serif; transition: background 0.2s; margin-top: 0.5rem;">
+                <i class="fa-solid fa-paper-plane"></i> إرسال طلب إضافة المزرعة
+            </button>
+        </form>
+    </div>
+</div>
             <!-- الخريطة التوضيحية التفاعلية مع دبابيس المزارع وروابط الإحداثيات المباشرة -->
             <div class="map-section">
                 <div class="map-header">
